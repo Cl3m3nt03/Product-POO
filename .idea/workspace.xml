@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="237145b9-e486-47e0-9366-86f3cd42474e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20250108.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Product-POO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Product-POO.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Empruntable.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1738136643059</updated>
       <workItem from="1738136644159" duration="1636000" />
-      <workItem from="1738147100305" duration="15292000" />
+      <workItem from="1738147100305" duration="16925000" />
     </task>
     <servers />
   </component>
