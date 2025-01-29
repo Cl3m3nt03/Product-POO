@@ -1,3 +1,4 @@
+import Controller.Pharmacy;
 import Controller.Product;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,7 +11,7 @@ public class Main extends Product {
     }
 
     public static void main(String[] args) {
-
+        Pharmacy.ReadJson();
         ArrayList<Product> product = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
