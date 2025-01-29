@@ -1,4 +1,6 @@
 package view;
+import Controller.Search;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -18,7 +20,7 @@ public class Menu {
                 // Handle the user's choice
                 switch (choice) {
                     case "1":
-                        System.out.println("1");
+                        Search.searchProduct();
                         break;
                     case "2":
                         System.out.println("2");
@@ -76,7 +78,7 @@ public class Menu {
 
         drawSpaceship(); // Draw the spaceship
         System.out.println("                ========================= MAIN MENU ========================= \n");
-        System.out.println("                                           1." + CYAN + "Play Game" + RESET);
+        System.out.println("                                           1." + CYAN + "Search" + RESET);
         System.out.println("                                           2." + GREEN + "Rules" + RESET);
         System.out.println("                                           3." + RED + "Quit\n" + RESET);
         System.out.println("                 ============================================================= ");
