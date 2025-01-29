@@ -1,4 +1,5 @@
 package Controller;
 
-public class Product {
+public abstract class Product {
+
 }
