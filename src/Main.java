@@ -6,9 +6,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Pharmacy.ReadJson();
 
-        Pharmacy pharmacy = new Pharmacy("La drogue", "Quelque part");
+        Pharmacy pharmacy = new Pharmacy("Skibidi Pharmacy", "Quelque part");
         Stock stock = new Stock(pharmacy);
         Scanner scanner = new Scanner(System.in);
 

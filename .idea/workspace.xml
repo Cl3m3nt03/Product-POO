@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="237145b9-e486-47e0-9366-86f3cd42474e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/Stock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Pharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Pharmacy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Stock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Stockable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Stockable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stocks_pharma.json" beforeDir="false" afterPath="$PROJECT_DIR$/stocks_pharma.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +45,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "addProduct",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/adrie/IdeaProjects/POO",
+    "last_opened_file_path": "C:/Users/adrie/Documents/GitHub/Product-POO",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,6 +58,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\adrie\Documents\GitHub\Product-POO" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

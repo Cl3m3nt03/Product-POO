@@ -1,143 +1,167 @@
-{
-  "pharmacie": {
-    "nom": "PharmaPlus",
-    "adresse": "123 Rue de la Santé, Paris",
+{"pharmacie": {
     "produits": [
-      {
-        "categorie": "Médicaments",
-        "sousCategorie": "Antibiotiques",
-        "produits": [
-          {
-            "id": 1,
-            "nom": "Amoxicilline",
-            "prix": 5.99,
-            "quantiteStock": 120,
-            "description": "Antibiotique à large spectre pour les infections bactériennes."
-          },
-          {
-            "id": 2,
-            "nom": "Azithromycine",
-            "prix": 7.49,
-            "quantiteStock": 50,
-            "description": "Traitement des infections respiratoires et ORL."
-          },
-          {
-            "id": 3,
-            "nom": "Ciprofloxacine",
-            "prix": 8.29,
-            "quantiteStock": 75,
-            "description": "Antibiotique utilisé pour les infections urinaires."
-          }
-        ]
-      },
-      {
-        "categorie": "Médicaments",
-        "sousCategorie": "Antalgiques",
-        "produits": [
-          {
-            "id": 4,
-            "nom": "Paracétamol",
-            "prix": 1.99,
-            "quantiteStock": 300,
-            "description": "Traitement de la douleur et de la fièvre."
-          },
-          {
-            "id": 5,
-            "nom": "Ibuprofène",
-            "prix": 3.49,
-            "quantiteStock": 200,
-            "description": "Anti-inflammatoire non stéroïdien."
-          },
-          {
-            "id": 6,
-            "nom": "Tramadol",
-            "prix": 9.99,
-            "quantiteStock": 25,
-            "description": "Antalgique pour les douleurs modérées à sévères."
-          }
-        ]
-      },
-      {
-        "categorie": "Cosmétiques",
-        "sousCategorie": "Soins de la peau",
-        "produits": [
-          {
-            "id": 7,
-            "nom": "Crème hydratante",
-            "prix": 14.99,
-            "quantiteStock": 80,
-            "description": "Crème pour hydrater les peaux sèches."
-          },
-          {
-            "id": 8,
-            "nom": "Gel nettoyant visage",
-            "prix": 9.49,
-            "quantiteStock": 150,
-            "description": "Gel doux pour nettoyer le visage en profondeur."
-          },
-          {
-            "id": 9,
-            "nom": "Sérum anti-âge",
-            "prix": 24.99,
-            "quantiteStock": 40,
-            "description": "Sérum pour réduire les signes de vieillissement."
-          }
-        ]
-      },
-      {
-        "categorie": "Parapharmacie",
-        "sousCategorie": "Hygiène bucco-dentaire",
-        "produits": [
-          {
-            "id": 10,
-            "nom": "Brosse à dents électrique",
-            "prix": 39.99,
-            "quantiteStock": 15,
-            "description": "Brosse à dents électrique avec plusieurs modes."
-          },
-          {
-            "id": 11,
-            "nom": "Dentifrice blancheur",
-            "prix": 3.99,
-            "quantiteStock": 250,
-            "description": "Dentifrice pour des dents plus blanches."
-          },
-          {
-            "id": 12,
-            "nom": "Bain de bouche antiseptique",
-            "prix": 6.49,
-            "quantiteStock": 180,
-            "description": "Solution pour une hygiène buccale complète."
-          }
-        ]
-      },
-      {
-        "categorie": "Compléments alimentaires",
-        "sousCategorie": "Vitamines",
-        "produits": [
-          {
-            "id": 13,
-            "nom": "Vitamine C",
-            "prix": 12.99,
-            "quantiteStock": 120,
-            "description": "Booste le système immunitaire et réduit la fatigue."
-          },
-          {
-            "id": 14,
-            "nom": "Vitamine D",
-            "prix": 8.49,
-            "quantiteStock": 90,
-            "description": "Améliore la santé des os et du système immunitaire."
-          },
-          {
-            "id": 15,
-            "nom": "Oméga-3",
-            "prix": 19.99,
-            "quantiteStock": 60,
-            "description": "Améliore la santé cardiovasculaire."
-          }
-        ]
-      }
-    ]
-  }
-}
+        {
+            "sousCategorie": "Antibiotiques",
+            "produits": [
+                {
+                    "quantiteStock": 120,
+                    "prix": 5.99,
+                    "description": "Antibiotique à large spectre pour les infections bactériennes.",
+                    "id": 1,
+                    "nom": "Amoxicilline"
+                },
+                {
+                    "quantiteStock": 50,
+                    "prix": 7.49,
+                    "description": "Traitement des infections respiratoires et ORL.",
+                    "id": 2,
+                    "nom": "Azithromycine"
+                },
+                {
+                    "quantiteStock": 75,
+                    "prix": 8.29,
+                    "description": "Antibiotique utilisé pour les infections urinaires.",
+                    "id": 3,
+                    "nom": "Ciprofloxacine"
+                }
+            ],
+            "categorie": "Médicaments"
+        },
+        {
+            "sousCategorie": "Antalgiques",
+            "produits": [
+                {
+                    "quantiteStock": 300,
+                    "prix": 1.99,
+                    "description": "Traitement de la douleur et de la fièvre.",
+                    "id": 4,
+                    "nom": "Paracétamol"
+                },
+                {
+                    "quantiteStock": 200,
+                    "prix": 3.49,
+                    "description": "Anti-inflammatoire non stéroïdien.",
+                    "id": 5,
+                    "nom": "Ibuprofène"
+                },
+                {
+                    "quantiteStock": 25,
+                    "prix": 9.99,
+                    "description": "Antalgique pour les douleurs modérées à sévères.",
+                    "id": 6,
+                    "nom": "Tramadol"
+                }
+            ],
+            "categorie": "Médicaments"
+        },
+        {
+            "sousCategorie": "Soins de la peau",
+            "produits": [
+                {
+                    "quantiteStock": 80,
+                    "prix": 14.99,
+                    "description": "Crème pour hydrater les peaux sèches.",
+                    "id": 7,
+                    "nom": "Crème hydratante"
+                },
+                {
+                    "quantiteStock": 150,
+                    "prix": 9.49,
+                    "description": "Gel doux pour nettoyer le visage en profondeur.",
+                    "id": 8,
+                    "nom": "Gel nettoyant visage"
+                },
+                {
+                    "quantiteStock": 40,
+                    "prix": 24.99,
+                    "description": "Sérum pour réduire les signes de vieillissement.",
+                    "id": 9,
+                    "nom": "Sérum anti-âge"
+                },
+                {
+                    "sousCategorie": "Antalgiques",
+                    "produits": [
+                        {
+                            "quantiteStock": 2333,
+                            "prix": 4.99,
+                            "description": "sdfsf",
+                            "id": 16,
+                            "nom": "Doliprane"
+                        },
+                        {
+                            "quantiteStock": 2323,
+                            "prix": 4.99,
+                            "description": "DSFSDF",
+                            "id": 16,
+                            "nom": "cacaboudin"
+                        },
+                        {
+                            "quantiteStock": 2739303,
+                            "prix": 4.99,
+                            "description": "qssdsfsqfsddf",
+                            "id": 16,
+                            "nom": "KAKOU KAKOU"
+                        }
+                    ]
+                }
+            ],
+            "categorie": "Cosmétiques"
+        },
+        {
+            "sousCategorie": "Hygiène bucco-dentaire",
+            "produits": [
+                {
+                    "quantiteStock": 15,
+                    "prix": 39.99,
+                    "description": "Brosse à dents électrique avec plusieurs modes.",
+                    "id": 10,
+                    "nom": "Brosse à dents électrique"
+                },
+                {
+                    "quantiteStock": 250,
+                    "prix": 3.99,
+                    "description": "Dentifrice pour des dents plus blanches.",
+                    "id": 11,
+                    "nom": "Dentifrice blancheur"
+                },
+                {
+                    "quantiteStock": 180,
+                    "prix": 6.49,
+                    "description": "Solution pour une hygiène buccale complète.",
+                    "id": 12,
+                    "nom": "Bain de bouche antiseptique"
+                }
+            ],
+            "categorie": "Parapharmacie"
+        },
+        {
+            "sousCategorie": "Vitamines",
+            "produits": [
+                {
+                    "quantiteStock": 120,
+                    "prix": 12.99,
+                    "description": "Booste le système immunitaire et réduit la fatigue.",
+                    "id": 13,
+                    "nom": "Vitamine C"
+                },
+                {
+                    "quantiteStock": 90,
+                    "prix": 8.49,
+                    "description": "Améliore la santé des os et du système immunitaire.",
+                    "id": 14,
+                    "nom": "Vitamine D"
+                },
+                {
+                    "quantiteStock": 60,
+                    "prix": 19.99,
+                    "description": "Améliore la santé cardiovasculaire.",
+                    "id": 15,
+                    "nom": "Oméga-3"
+                }
+            ],
+            "categorie": "Compléments alimentaires"
+        }
+    ],
+    "adresse": "123 Rue de la Santé, Paris",
+    "nom": "PharmaPlus"
+}}
