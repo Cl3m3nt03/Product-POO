@@ -1,5 +1,7 @@
 import Controller.Pharmacy;
 import Controller.Product;
+import view.Menu;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -11,7 +13,7 @@ public class Main extends Product {
     }
 
     public static void main(String[] args) {
-        Pharmacy.ReadJson();
+
         ArrayList<Product> product = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
@@ -68,6 +70,7 @@ public class Main extends Product {
         } while (continueSearch);
 
         scanner.close();
+
     }
 
         //Binary search algorithm
