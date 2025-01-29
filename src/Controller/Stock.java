@@ -87,48 +87,58 @@ public class Stock implements Stockable {
                 if (currentCategory.getString("categorie").equalsIgnoreCase(category)) {
                     categoryFound = true;
 
-                    if (currentCategory.getString("sousCategorie").equalsIgnoreCase(subcategory)) {
-                        subcategoryFound = true;
-                        targetCategory = currentCategory;
-                        targetSubcategory = currentCategory.getJSONArray("produits");
-                        break;
+                    // Recherche de la sous-catégorie dans la catégorie
+                    JSONArray subcategoriesArray = currentCategory.optJSONArray("sousCategories");
+                    if (subcategoriesArray == null) {
+                        subcategoriesArray = new JSONArray();
+                        currentCategory.put("sousCategories", subcategoriesArray);
                     }
+
+                    // Recherche de la sous-catégorie
+                    for (int k = 0; k < subcategoriesArray.length(); k++) {
+                        JSONObject currentSubcategory = subcategoriesArray.getJSONObject(k);
+                        if (currentSubcategory.getString("sousCategorie").equalsIgnoreCase(subcategory)) {
+                            subcategoryFound = true;
+                            targetSubcategory = currentSubcategory.getJSONArray("produits");
+                            break;
+                        }
+                    }
+
+                    // Si la sous-catégorie n'est pas trouvée, on la crée
+                    if (!subcategoryFound) {
+                        JSONObject newSubcategory = new JSONObject();
+                        newSubcategory.put("sousCategorie", subcategory);
+                        newSubcategory.put("produits", new JSONArray());
+                        subcategoriesArray.put(newSubcategory);
+                        targetSubcategory = newSubcategory.getJSONArray("produits");
+                    }
+                    break;
                 }
             }
 
-            // Génération d'un nouvel ID unique
+            // Si la catégorie n'est pas trouvée, on la crée
+            if (!categoryFound) {
+                JSONObject newCategory = new JSONObject();
+                newCategory.put("categorie", category);
+                JSONArray newSubcategoriesArray = new JSONArray();
+
+                JSONObject newSubcategory = new JSONObject();
+                newSubcategory.put("sousCategorie", subcategory);
+                newSubcategory.put("produits", new JSONArray());
+
+                newSubcategoriesArray.put(newSubcategory);
+                newCategory.put("sousCategories", newSubcategoriesArray);
+                produitsArray.put(newCategory);
+
+                targetSubcategory = newSubcategory.getJSONArray("produits");
+            }
+
+            // Génération d'un nouvel ID unique pour le produit
             int newId = generateNewId(targetSubcategory);
             newProduct.put("id", newId); // Assigner le nouvel ID
 
-            if (subcategoryFound) {
-                // Ajouter le produit dans la sous-catégorie existante
-                targetSubcategory.put(newProduct);
-            } else if (categoryFound) {
-                // Ajouter la nouvelle sous-catégorie dans la catégorie existante
-                JSONObject newSubcategory = new JSONObject();
-                newSubcategory.put("sousCategorie", subcategory);
-                newSubcategory.put("produits", new JSONArray().put(newProduct));
-
-                // Correction ici : Ajouter dans un tableau sous-catégorie
-                JSONArray subcategoriesArray = targetCategory.optJSONArray("produits");
-                if (subcategoriesArray == null) {
-                    subcategoriesArray = new JSONArray();
-                    targetCategory.put("produits", subcategoriesArray);
-                }
-
-                subcategoriesArray.put(newSubcategory);
-            } else {
-                // Créer une nouvelle catégorie si elle n'existe pas
-                JSONObject newCategory = new JSONObject();
-                newCategory.put("categorie", category);
-                newCategory.put("sousCategorie", subcategory);
-
-                JSONArray newProductsArray = new JSONArray();
-                newProductsArray.put(newProduct);
-
-                newCategory.put("produits", newProductsArray);
-                produitsArray.put(newCategory);
-            }
+            // Ajouter le produit à la sous-catégorie
+            targetSubcategory.put(newProduct);
 
             // Écriture dans le fichier JSON
             FileWriter file = new FileWriter("stocks_pharma.json");

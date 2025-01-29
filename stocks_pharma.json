@@ -50,13 +50,6 @@
                     "description": "Antalgique pour les douleurs modérées à sévères.",
                     "id": 6,
                     "nom": "Tramadol"
-                },
-                {
-                    "quantiteStock": 24323,
-                    "prix": 10.99,
-                    "description": "dsdndfjdsfsikfsd",
-                    "id": 7,
-                    "nom": "Doliprane"
                 }
             ],
             "categorie": "Médicaments"
@@ -143,15 +136,34 @@
             "categorie": "Compléments alimentaires"
         },
         {
-            "sousCategorie": "PIPI",
-            "produits": [{
-                "quantiteStock": 457,
-                "prix": 1000,
-                "description": "sdfsdfs",
-                "id": 1,
-                "nom": "caca"
+            "sousCategorie": "ah ouai",
+            "produits": [
+                {
+                    "quantiteStock": 2323,
+                    "prix": 14.88,
+                    "description": "dsqdqs",
+                    "id": 1,
+                    "nom": "Coucou"
+                },
+                {
+                    "quantiteStock": 23,
+                    "prix": 14.99,
+                    "description": "qsdsq",
+                    "id": 2,
+                    "nom": "lalala"
+                }
+            ],
+            "sousCategories": [{
+                "sousCategorie": "meme pas un peu",
+                "produits": [{
+                    "quantiteStock": 233,
+                    "prix": 14.99,
+                    "description": "qsdqs",
+                    "id": 1,
+                    "nom": "DSQDFSQ"
+                }]
             }],
-            "categorie": "CACA"
+            "categorie": "Je Sais Pas"
         }
     ],
     "adresse": "123 Rue de la Santé, Paris",
