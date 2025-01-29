@@ -5,6 +5,8 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Comparator;
 
 
 public abstract class Pharmacy {
@@ -34,12 +36,24 @@ public abstract class Pharmacy {
                     System.out.println("Sous-catégorie: " + sousCategorie);
 
                     JSONArray produitsDetails = (JSONArray) produit.get("produits");
+
+
+                    ArrayList<JSONObject> produitsDetailsList = new ArrayList<>();
+
+                    // add JsonObject to list
                     for (Object produitDetailObj : produitsDetails) {
                         JSONObject produitDetail = (JSONObject) produitDetailObj;
+                        produitsDetailsList.add(produitDetail);
+                    }
+                    produitsDetailsList.sort(Comparator.comparing(p -> (String) p.get("nom")));
+
+                    // Display Products
+                    for (JSONObject produitDetail : produitsDetailsList) {
                         String nomProduit = (String) produitDetail.get("nom");
                         Double prixProduit = (Double) produitDetail.get("prix");
                         Long quantiteStock = (Long) produitDetail.get("quantiteStock");
                         String description = (String) produitDetail.get("description");
+
                         System.out.println("Nom du produit: " + nomProduit);
                         System.out.println("Prix: " + prixProduit);
                         System.out.println("Quantité en stock: " + quantiteStock);
