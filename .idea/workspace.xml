@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="237145b9-e486-47e0-9366-86f3cd42474e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/fastSorting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +48,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.FastSorting.executor": "Run",
     "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "true",
     "Repository.Attach.Annotations": "false",
@@ -53,7 +56,7 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "us7",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/cleme/IdeaProjects/SpacePosition",
     "node.js.detected.package.eslint": "true",
@@ -91,7 +94,7 @@
       <updated>1738136643059</updated>
       <workItem from="1738136644159" duration="1636000" />
       <workItem from="1738147100305" duration="16925000" />
-      <workItem from="1738180602777" duration="1327000" />
+      <workItem from="1738180602777" duration="4812000" />
     </task>
     <servers />
   </component>

@@ -13,7 +13,6 @@ public class Main extends Product {
     }
 
     public static void main(String[] args) {
-
         ArrayList<Product> product = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
