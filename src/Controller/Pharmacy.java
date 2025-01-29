@@ -1,61 +1,21 @@
 package Controller;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 
 
 public class Pharmacy {
     private String nom;
     private String adresse;
-
-    public static void ReadJson(){
-            JSONParser parser = new JSONParser();
-
-            try (FileReader reader = new FileReader("stocks_pharma.json")) {
-                // Read JSON file
-                Object object = parser.parse(reader);
-                JSONObject jsonObject = (JSONObject) object;
-
-                // Access pharmacy
-                JSONObject pharmacie = (JSONObject) jsonObject.get("pharmacie");
-                String nomPharmacie = (String) pharmacie.get("nom");
-                System.out.println("Nom de la pharmacie: " + nomPharmacie);
-
-                // Access produits
-                JSONArray produits = (JSONArray) pharmacie.get("produits");
-                for (Object produitObj : produits) {
-                    JSONObject produit = (JSONObject) produitObj;
-                    String categorie = (String) produit.get("categorie");
-                    String sousCategorie = (String) produit.get("sousCategorie");
-                    System.out.println("\nCatégorie: " + categorie);
-                    System.out.println("Sous-catégorie: " + sousCategorie);
-
-                    JSONArray produitsDetails = (JSONArray) produit.get("produits");
-                    for (Object produitDetailObj : produitsDetails) {
-                        JSONObject produitDetail = (JSONObject) produitDetailObj;
-                        String nomProduit = (String) produitDetail.get("nom");
-                        Double prixProduit = (Double) produitDetail.get("prix");
-                        Long quantiteStock = (Long) produitDetail.get("quantiteStock");
-                        String description = (String) produitDetail.get("description");
-                        System.out.println("Nom du produit: " + nomProduit);
-                        System.out.println("Prix: " + prixProduit);
-                        System.out.println("Quantité en stock: " + quantiteStock);
-                        System.out.println("Description: " + description);
-                        System.out.println();
-                    }
-                }
-
-            } catch (IOException | ParseException e) {
-                e.printStackTrace();
-            }
-    }
+    private List<Product> productList = new ArrayList<>();
 
     public Pharmacy(String nom, String adresse) {
         this.nom = nom;
         this.adresse = adresse;
+    }
+
+    public String getName() {
+        return nom;
     }
 
     public void afficherDetails() {
@@ -63,4 +23,41 @@ public class Pharmacy {
         System.out.println("Adresse: " + adresse);
     }
 
+    public void addProduct(Product product) {
+        productList.add(product);
+    }
+
+    public void showStock() {
+        System.out.println("Stock de la pharmacie: " + nom);
+
+        int id = 1;
+
+        for (Product product : productList) {
+            System.out.println("\nCatégorie: " + product.getCategory());
+            System.out.println("  Sous-catégorie: " + product.getSubcategory());
+
+            System.out.println("    " + id + ". " + product.getName() + " (Prix: " + product.getPrice() + "€, Stock: " + product.getQuantity() + ")");
+            System.out.println("       → " + product.getDescription());
+
+            id++;
+        }
+    }
+
+
+    public void removeProduct(String productName) {
+        boolean found = false;
+
+        for (Product product : productList) {
+            if (product.getName().equalsIgnoreCase(productName)) {
+                productList.remove(product);
+                found = true;
+                System.out.println("Le produit " + productName + " a été supprimé de l'inventaire.");
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Aucun produit trouvé avec le nom : " + productName);
+        }
+    }
 }

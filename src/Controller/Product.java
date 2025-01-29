@@ -1,8 +1,9 @@
 package Controller;
 
-public class Product{
+import java.util.ArrayList;
+import java.util.List;
 
-    private int id;
+public class Product {
     private String name;
     private String category;
     private String subcategory;
@@ -10,8 +11,9 @@ public class Product{
     private int quantity;
     private String description;
 
-    public Product(int id, String name, String category, String subcategory, double price, int quantity, String description) {
-        this.id = id;
+
+
+    public Product(String name, String category, String subcategory, double price, int quantity, String description) {
         this.name = name;
         this.category = category;
         this.subcategory = subcategory;
@@ -20,8 +22,31 @@ public class Product{
         this.description = description;
     }
 
-    public String toString() {
-        return id + " " + name + " " + category + " " + subcategory + " " + price + " " + quantity + " " + description;
+    public String getName() {
+        return name;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public String getSubcategory() {
+        return subcategory;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String toString() {
+        return name + " " + category + " " + subcategory + " " + price + " " + quantity + " " + description;
+    }
 }
