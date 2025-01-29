@@ -50,6 +50,13 @@
                     "description": "Antalgique pour les douleurs modérées à sévères.",
                     "id": 6,
                     "nom": "Tramadol"
+                },
+                {
+                    "quantiteStock": 24323,
+                    "prix": 10.99,
+                    "description": "dsdndfjdsfsikfsd",
+                    "id": 7,
+                    "nom": "Doliprane"
                 }
             ],
             "categorie": "Médicaments"
@@ -77,32 +84,6 @@
                     "description": "Sérum pour réduire les signes de vieillissement.",
                     "id": 9,
                     "nom": "Sérum anti-âge"
-                },
-                {
-                    "sousCategorie": "Antalgiques",
-                    "produits": [
-                        {
-                            "quantiteStock": 2333,
-                            "prix": 4.99,
-                            "description": "sdfsf",
-                            "id": 16,
-                            "nom": "Doliprane"
-                        },
-                        {
-                            "quantiteStock": 2323,
-                            "prix": 4.99,
-                            "description": "DSFSDF",
-                            "id": 16,
-                            "nom": "cacaboudin"
-                        },
-                        {
-                            "quantiteStock": 2739303,
-                            "prix": 4.99,
-                            "description": "qssdsfsqfsddf",
-                            "id": 16,
-                            "nom": "KAKOU KAKOU"
-                        }
-                    ]
                 }
             ],
             "categorie": "Cosmétiques"
@@ -160,6 +141,17 @@
                 }
             ],
             "categorie": "Compléments alimentaires"
+        },
+        {
+            "sousCategorie": "PIPI",
+            "produits": [{
+                "quantiteStock": 457,
+                "prix": 1000,
+                "description": "sdfsdfs",
+                "id": 1,
+                "nom": "caca"
+            }],
+            "categorie": "CACA"
         }
     ],
     "adresse": "123 Rue de la Santé, Paris",
