@@ -1,94 +1,90 @@
 package Controller;
 
-
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Créer un objet Pharmacy pour gérer le stock à partir du fichier JSON
+        // Create a Pharmacy object to manage the stock from the JSON file
         Pharmacy pharmacy = new Pharmacy("stocks_pharma.json");
 
-        // Scanner pour prendre les entrées de l'utilisateur
+        // Scanner to take user inputs
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            // Afficher le menu
+            // Display the menu
             System.out.println("===== Menu =====");
-            System.out.println("1. Ajouter un produit");
-            System.out.println("2. Supprimer un produit");
-            System.out.println("3. Quitter");
-            System.out.print("Choisissez une option (1/2/3): ");
+            System.out.println("1. Add a product");
+            System.out.println("2. Delete a product");
+            System.out.println("3. Exit");
+            System.out.print("Choose an option (1/2/3): ");
             int choice = scanner.nextInt();
-            scanner.nextLine();  // Consommer le newline restant
+            scanner.nextLine();  // Consume the remaining newline
 
             if (choice == 1) {
-                // Ajouter un produit
-                System.out.println("\n--- Ajouter un produit ---");
+                // Add a product
+                System.out.println("\n--- Add a product ---");
 
-                // Demander les informations du produit à l'utilisateur
-                System.out.print("Entrez l'id du produit: ");
+                // Ask the user for product information
+                System.out.print("Enter the product id: ");
                 int id = scanner.nextInt();
-                scanner.nextLine();  // Consommer le newline restant
+                scanner.nextLine();  // Consume the remaining newline
 
-                System.out.print("Entrez le nom du produit: ");
-                String nom = scanner.nextLine();
+                System.out.print("Enter the product name: ");
+                String name = scanner.nextLine();
 
-                System.out.print("Entrez le prix du produit: ");
-                double prix = scanner.nextDouble();
+                System.out.print("Enter the product price: ");
+                double price = scanner.nextDouble();
 
-                System.out.print("Entrez la quantité en stock du produit: ");
-                int quantiteStock = scanner.nextInt();
-                scanner.nextLine();  // Consommer le newline restant
+                System.out.print("Enter the product stock quantity: ");
+                int stockQuantity = scanner.nextInt();
+                scanner.nextLine();  // Consume the remaining newline
 
-                System.out.print("Entrez la description du produit: ");
+                System.out.print("Enter the product description: ");
                 String description = scanner.nextLine();
 
-                // Créer un nouvel objet Product avec les informations de l'utilisateur
-                Product newProduct = new Product(id, nom, prix, quantiteStock, description);
+                // Create a new Product object with the user's input
+                Product newProduct = new Product(id, name, price, stockQuantity, description);
 
-                // Demander à l'utilisateur la catégorie et la sous-catégorie
-                System.out.print("Entrez la catégorie du produit: ");
-                String categorie = scanner.nextLine();
+                // Ask the user for the category and sub-category
+                System.out.print("Enter the product category: ");
+                String category = scanner.nextLine();
 
-                System.out.print("Entrez la sous-catégorie du produit: ");
-                String sousCategorie = scanner.nextLine();
+                System.out.print("Enter the product sub-category: ");
+                String subCategory = scanner.nextLine();
 
-                // Ajouter le produit à la pharmacie
-                pharmacy.ajouterProduit(newProduct, categorie, sousCategorie);
+                // Add the product to the pharmacy
+                pharmacy.addProduct(newProduct, category, subCategory);
 
             } else if (choice == 2) {
-                // Supprimer un produit
-                System.out.println("\n--- Supprimer un produit ---");
+                // Delete a product
+                System.out.println("\n--- Delete a product ---");
 
-                // Demander l'ID du produit à supprimer
-                System.out.print("Entrez l'id du produit à supprimer: ");
+                // Ask for the product ID to delete
+                System.out.print("Enter the product id to delete: ");
                 int productId = scanner.nextInt();
-                scanner.nextLine();  // Consommer le newline restant
+                scanner.nextLine();  // Consume the remaining newline
 
-                // Demander la catégorie et la sous-catégorie
-                System.out.print("Entrez la catégorie du produit: ");
-                String categorie = scanner.nextLine();
+                // Ask for the category and sub-category
+                System.out.print("Enter the product category: ");
+                String category = scanner.nextLine();
 
-                System.out.print("Entrez la sous-catégorie du produit: ");
-                String sousCategorie = scanner.nextLine();
+                System.out.print("Enter the product sub-category: ");
+                String subCategory = scanner.nextLine();
 
-                // Supprimer le produit de la pharmacie
-                pharmacy.supprimerProduit(productId, categorie, sousCategorie);
+                // Delete the product from the pharmacy
+                pharmacy.deleteProduct(productId, category, subCategory);
 
             } else if (choice == 3) {
-                // Quitter l'application
-                System.out.println("Au revoir!");
+                // Exit the application
+                System.out.println("Goodbye!");
                 break;
             } else {
-                // Si l'utilisateur entre une option invalide
-                System.out.println("Option invalide, veuillez réessayer.");
+                // If the user enters an invalid option
+                System.out.println("Invalid option, please try again.");
             }
         }
 
-        scanner.close();  // Fermer le scanner
+        scanner.close();  // Close the scanner
     }
 }
-
-
-

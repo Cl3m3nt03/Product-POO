@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 public class Pharmacy {
     private JSONObject stock;
 
-    // Constructeur pour charger le fichier JSON
+    // Constructor to load the JSON file
     public Pharmacy(String filePath) {
         try {
             String content = new String(Files.readAllBytes(Paths.get(filePath)));
@@ -20,127 +20,127 @@ public class Pharmacy {
         }
     }
 
-    // Méthode pour ajouter un produit
-    public void ajouterProduit(Product product, String categorie, String sousCategorie) {
-        // Récupérer l'objet "pharmacie" dans le JSON
-        JSONObject pharmacie = stock.getJSONObject("pharmacie");
+    // Method to add a product
+    public void addProduct(Product product, String category, String subCategory) {
+        // Get the "pharmacy" object in the JSON
+        JSONObject pharmacy = stock.getJSONObject("pharmacy");
 
-        // Récupérer la liste des produits dans la pharmacie
-        JSONArray produits = pharmacie.getJSONArray("produits");
+        // Get the list of products in the pharmacy
+        JSONArray products = pharmacy.getJSONArray("products");
 
-        // Variable pour savoir si la catégorie et la sous-catégorie sont trouvées
-        boolean categorieTrouvee = false;
-        boolean sousCategorieTrouvee = false;
+        // Variables to check if the category and sub-category are found
+        boolean categoryFound = false;
+        boolean subCategoryFound = false;
 
-        // Boucle à travers toutes les catégories de produits dans la pharmacie
-        for (int i = 0; i < produits.length(); i++) {
-            // Récupérer chaque objet de produit dans la liste
-            JSONObject produitJSON = produits.getJSONObject(i);
+        // Loop through all categories of products in the pharmacy
+        for (int i = 0; i < products.length(); i++) {
+            // Get each product object from the list
+            JSONObject productJSON = products.getJSONObject(i);
 
-            // Afficher la catégorie et sous-catégorie pour déboguer
-            System.out.println("Vérification de la catégorie : " + produitJSON.getString("categorie"));
-            System.out.println("Vérification de la sous-catégorie : " + produitJSON.getString("sousCategorie"));
+            // Debug: Print the category and sub-category
+            System.out.println("Checking category: " + productJSON.getString("category"));
+            System.out.println("Checking sub-category: " + productJSON.getString("subCategory"));
 
-            // Vérifier si la catégorie et la sous-catégorie correspondent
-            if (produitJSON.getString("categorie").equals(categorie) &&
-                    produitJSON.getString("sousCategorie").equals(sousCategorie)) {
+            // Check if the category and sub-category match
+            if (productJSON.getString("category").equals(category) &&
+                    productJSON.getString("subCategory").equals(subCategory)) {
 
-                // Si la catégorie et la sous-catégorie sont trouvées, ajout du produit
-                sousCategorieTrouvee = true;
-                categorieTrouvee = true;
+                // If the category and sub-category are found, add the product
+                subCategoryFound = true;
+                categoryFound = true;
 
-                produitJSON.getJSONArray("produits").put(product.toJSON());  // Ajouter le produit
-                System.out.println("Produit ajouté à la sous-catégorie existante.");
+                productJSON.getJSONArray("products").put(product.toJSON());  // Add the product
+                System.out.println("Product added to the existing sub-category.");
 
-                // Sauvegarder le fichier JSON après modification
+                // Save the JSON file after modification
                 saveStockToFile("stocks_pharma.json");
 
-                return;  // Sortir dès que le produit est ajouté
+                return;  // Exit as soon as the product is added
             }
         }
 
-        // Si la catégorie et la sous-catégorie ne sont pas trouvées
-        if (!sousCategorieTrouvee) {
-            System.out.println("La sous-catégorie n'existe pas dans la catégorie, aucun produit ajouté.");
+        // If the category and sub-category are not found
+        if (!subCategoryFound) {
+            System.out.println("The sub-category does not exist in the category, no product added.");
         }
 
-        if (!categorieTrouvee) {
-            System.out.println("La catégorie n'existe pas dans la catégorie, aucun produit ajouté.");
+        if (!categoryFound) {
+            System.out.println("The category does not exist in the pharmacy, no product added.");
         }
 
     }
 
-    // Méthode pour supprimer un produit
-    public void supprimerProduit(int productId, String categorie, String sousCategorie) {
-        // Récupérer l'objet "pharmacie" dans le JSON
-        JSONObject pharmacie = stock.getJSONObject("pharmacie");
+    // Method to delete a product
+    public void deleteProduct(int productId, String category, String subCategory) {
+        // Get the "pharmacy" object in the JSON
+        JSONObject pharmacy = stock.getJSONObject("pharmacy");
 
-        // Récupérer la liste des produits dans la pharmacie
-        JSONArray produits = pharmacie.getJSONArray("produits");
+        // Get the list of products in the pharmacy
+        JSONArray products = pharmacy.getJSONArray("products");
 
-        // Variable pour savoir si la catégorie et la sous-catégorie sont trouvées
-        boolean categorieTrouvee = false;
-        boolean sousCategorieTrouvee = false;
-        boolean produitSupprime = false;
+        // Variables to check if the category and sub-category are found
+        boolean categoryFound = false;
+        boolean subCategoryFound = false;
+        boolean productDeleted = false;
 
-        // Boucle à travers toutes les catégories de produits dans la pharmacie
-        for (int i = 0; i < produits.length(); i++) {
-            // Récupérer chaque objet de produit dans la liste
-            JSONObject produitJSON = produits.getJSONObject(i);
+        // Loop through all categories of products in the pharmacy
+        for (int i = 0; i < products.length(); i++) {
+            // Get each product object from the list
+            JSONObject productJSON = products.getJSONObject(i);
 
-            // Afficher la catégorie et sous-catégorie pour déboguer
-            System.out.println("Vérification de la catégorie : " + produitJSON.getString("categorie"));
-            System.out.println("Vérification de la sous-catégorie : " + produitJSON.getString("sousCategorie"));
+            // Debug: Print the category and sub-category
+            System.out.println("Checking category: " + productJSON.getString("category"));
+            System.out.println("Checking sub-category: " + productJSON.getString("subCategory"));
 
-            // Vérifier si la catégorie et la sous-catégorie correspondent
-            if (produitJSON.getString("categorie").equals(categorie) &&
-                    produitJSON.getString("sousCategorie").equals(sousCategorie)) {
+            // Check if the category and sub-category match
+            if (productJSON.getString("category").equals(category) &&
+                    productJSON.getString("subCategory").equals(subCategory)) {
 
-                // Si la catégorie et la sous-catégorie sont trouvées
-                sousCategorieTrouvee = true;
-                categorieTrouvee = true;
+                // If the category and sub-category are found
+                subCategoryFound = true;
+                categoryFound = true;
 
-                // Récupérer la liste des produits dans cette sous-catégorie
-                JSONArray produitsSousCategorie = produitJSON.getJSONArray("produits");
+                // Get the list of products in this sub-category
+                JSONArray subCategoryProducts = productJSON.getJSONArray("products");
 
-                // Parcourir les produits dans la sous-catégorie
-                for (int j = 0; j < produitsSousCategorie.length(); j++) {
-                    JSONObject produitDansSousCategorie = produitsSousCategorie.getJSONObject(j);
+                // Loop through the products in the sub-category
+                for (int j = 0; j < subCategoryProducts.length(); j++) {
+                    JSONObject productInSubCategory = subCategoryProducts.getJSONObject(j);
 
-                    // Vérifier si l'ID du produit correspond à celui à supprimer
-                    if (produitDansSousCategorie.getInt("id") == productId) {
-                        // Supprimer le produit
-                        produitsSousCategorie.remove(j);
-                        produitSupprime = true;
-                        System.out.println("Produit supprimé de la sous-catégorie.");
+                    // Check if the product ID matches the one to be deleted
+                    if (productInSubCategory.getInt("id") == productId) {
+                        // Delete the product
+                        subCategoryProducts.remove(j);
+                        productDeleted = true;
+                        System.out.println("Product deleted from the sub-category.");
 
-                        // Sauvegarder le fichier JSON après modification
+                        // Save the JSON file after modification
                         saveStockToFile("stocks_pharma.json");
-                        return;  // Sortir dès que le produit est supprimé
+                        return;  // Exit as soon as the product is deleted
                     }
                 }
             }
         }
 
-        // Si la sous-catégorie ou la catégorie n'ont pas été trouvées
-        if (!sousCategorieTrouvee) {
-            System.out.println("La sous-catégorie n'existe pas dans la catégorie, aucun produit supprimé.");
+        // If the sub-category or category was not found
+        if (!subCategoryFound) {
+            System.out.println("The sub-category does not exist in the category, no product deleted.");
         }
 
-        if (!categorieTrouvee) {
-            System.out.println("La catégorie n'existe pas dans la pharmacie, aucun produit supprimé.");
+        if (!categoryFound) {
+            System.out.println("The category does not exist in the pharmacy, no product deleted.");
         }
 
-        // Si le produit n'a pas été trouvé
-        if (!produitSupprime) {
-            System.out.println("Aucun produit trouvé avec l'ID spécifié dans la catégorie et sous-catégorie données.");
+        // If the product was not found
+        if (!productDeleted) {
+            System.out.println("No product found with the specified ID in the given category and sub-category.");
         }
     }
 
-    // Méthode pour sauvegarder le fichier JSON après modification
+    // Method to save the JSON file after modification
     private void saveStockToFile(String filePath) {
         try (FileWriter file = new FileWriter(filePath)) {
-            file.write(stock.toString(4)); // Formatage avec indentation
+            file.write(stock.toString(4)); // Formatting with indentation
         } catch (IOException e) {
             e.printStackTrace();
         }
