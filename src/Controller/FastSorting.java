@@ -11,9 +11,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-class FastSorting {
+public class FastSorting {
 
-    public FastSorting() throws IOException, ParseException {
+    public static void FastSorting() throws IOException, ParseException {
         //load file json
         JSONParser parser = new JSONParser();
         FileReader reader = new FileReader("stocks_pharma.json");
@@ -40,11 +40,15 @@ class FastSorting {
         quickSort(produits, 0, produits.size() - 1);
 
         for (Produit produit : produits) {
-            System.out.println(produit.getNom() + " - Quantité en stock: " + produit.getQuantiteStock());
+            if( produit.getQuantiteStock() < 5 ){
+                System.out.println(produit.getNom() + " - Quantité en stock: " + produit.getQuantiteStock() + " Attention");
+            } else{
+                System.out.println(produit.getNom() + " - Quantité en stock: " + produit.getQuantiteStock());
+            }
         }
     }
 
-    public void quickSort(List<Produit> produits, int begin, int end) {
+    public static void quickSort(List<Produit> produits, int begin, int end) {
         if (begin < end) {
             int partitionIndex = partition(produits, begin, end);
             quickSort(produits, begin, partitionIndex - 1);
@@ -52,11 +56,11 @@ class FastSorting {
         }
     }
 
-    private int partition(List<Produit> produits, int begin, int end) {
+    private static int partition(List<Produit> produits, int begin, int end) {
         int pivot = produits.get(end).getQuantiteStock();
         int i = (begin - 1);
         for (int j = begin; j < end; j++) {
-            if (produits.get(j).getQuantiteStock() >= pivot) {
+            if (produits.get(j).getQuantiteStock() <= pivot) {
                 i++;
                 // Échanger les éléments
                 Produit temp = produits.get(i);
@@ -86,9 +90,5 @@ class FastSorting {
         public int getQuantiteStock() {
             return quantiteStock;
         }
-    }
-
-    public static void main(String[] args) throws IOException, ParseException {
-        new FastSorting();
     }
 }
