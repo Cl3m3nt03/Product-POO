@@ -1,6 +1,6 @@
 package Controller;
 
-public abstract class Pharmacy {
+public class Pharmacy {
     private String nom;
     private String adresse;
 
