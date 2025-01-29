@@ -1,52 +1,31 @@
 package Controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.json.JSONObject;
 
-public class Product {
-    private String name;
-    private String category;
-    private String subcategory;
-    private double price;
-    private int quantity;
+class Product {
+    private int id;
+    private String nom;
+    private double prix;
+    private int quantiteStock;
     private String description;
 
-
-
-    public Product(String name, String category, String subcategory, double price, int quantity, String description) {
-        this.name = name;
-        this.category = category;
-        this.subcategory = subcategory;
-        this.price = price;
-        this.quantity = quantity;
+    // Constructeur
+    public Product(int id, String nom, double prix, int quantiteStock, String description) {
+        this.id = id;
+        this.nom = nom;
+        this.prix = prix;
+        this.quantiteStock = quantiteStock;
         this.description = description;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public String getSubcategory() {
-        return subcategory;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String toString() {
-        return name + " " + category + " " + subcategory + " " + price + " " + quantity + " " + description;
+    // Convertir un produit en objet JSON
+    public JSONObject toJSON() {
+        JSONObject productJSON = new JSONObject();
+        productJSON.put("id", this.id);
+        productJSON.put("nom", this.nom);
+        productJSON.put("prix", this.prix);
+        productJSON.put("quantiteStock", this.quantiteStock);
+        productJSON.put("description", this.description);
+        return productJSON;
     }
 }

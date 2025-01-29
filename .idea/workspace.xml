@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="237145b9-e486-47e0-9366-86f3cd42474e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Pharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Pharmacy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Stock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Empruntable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Stockable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Stockable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stocks_pharma.json" beforeDir="false" afterPath="$PROJECT_DIR$/stocks_pharma.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +46,7 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "addProduct",
+    "git-widget-placeholder": "addProductJSON",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/adrie/IdeaProjects/POO",
     "node.js.detected.package.eslint": "true",
@@ -87,7 +88,7 @@
       <updated>1738136643059</updated>
       <workItem from="1738136644159" duration="1636000" />
       <workItem from="1738166461586" duration="307000" />
-      <workItem from="1738173793457" duration="2234000" />
+      <workItem from="1738173793457" duration="8907000" />
     </task>
     <servers />
   </component>
