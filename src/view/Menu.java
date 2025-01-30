@@ -1,4 +1,5 @@
 package view;
+import Controller.Account;
 import Controller.FastSorting;
 import Controller.Search;
 import org.json.simple.parser.ParseException;
@@ -23,17 +24,12 @@ public class Menu {
                 // Handle the user's choice
                 switch (choice) {
                     case "1":
-                        Search.searchProduct();
+                        Account.CreateAccount();
                         break;
                     case "2":
-                        //call function
-                        FastSorting.FastSorting();
-                        System.out.println("2");
+                        Account.loginAccount();
                         break;
                     case "3":
-                        MenuManage.MenuManageProduct();
-                        break;
-                    case "4":
 
                         System.out.println("                 Thanks for playing. See you next time!");
                         System.exit(0);
@@ -53,13 +49,20 @@ public class Menu {
     public static void drawTitle() {
         final String RESET = "\u001B[0m";
         final String YELLOW = "\u001B[33m";
+        final String GREEN = "\u001B[32m";
 
-        System.out.println(YELLOW + " ______  ______ ______  ______  ______       ______ ______  ______  __  ______ __  ______  __   __    \n" +
-                "/\\  ___\\/\\  == /\\  __ \\/\\  ___\\/\\  ___\\     /\\  == /\\  __ \\/\\  ___\\/\\ \\/\\__  _/\\ \\/\\  __ \\/\\ \"-.\\ \\   \n" +
-                "\\ \\___  \\ \\  _-\\ \\  __ \\ \\ \\___\\ \\  __\\     \\ \\  _-\\ \\ \\/\\ \\ \\___  \\ \\ \\/_/\\ \\\\ \\ \\ \\ \\/\\ \\ \\ \\-.  \\  \n" +
-                " \\/\\_____\\ \\_\\  \\ \\_\\ \\_\\ \\_____\\ \\_____\\    \\ \\_\\  \\ \\_____\\/\\_____\\ \\_\\ \\ \\_\\\\ \\_\\ \\_____\\ \\_\\\\\"\\_\\ \n" +
-                "  \\/_____/\\/_/   \\/_/\\/_/\\/_____/\\/_____/     \\/_/   \\/_____/\\/_____/\\/_/  \\/_/ \\/_/\\/_____/\\/_/ \\/_/ \n" +
-                "                                                                                                      " + RESET);
+
+        System.out.println(GREEN +
+                " ________   ___  ___   ________   ________   _____ ______    ________   ________       ___    ___  \n" +
+                "|\\   __  \\ |\\  \\|\\  \\ |\\   __  \\ |\\   __  \\ |\\   _ \\  _   \\ |\\   __  \\ |\\   ____\\     |\\  \\  /  /| \n" +
+                "\\ \\  \\|\\  \\ \\  \\\\  \\ \\ \\  \\|\\  \\ \\ \\  \\|\\  \\ \\ \\  \\\\__\\ \\  \\ \\ \\  \\|\\  \\ \\  \\___|     \\ \\  \\/  / / \n" +
+                " \\ \\   ____\\ \\   __  \\ \\ \\   __  \\ \\ \\   _  _\\ \\  \\|__| \\  \\ \\ \\   __  \\ \\  \\         \\ \\    / /  \n" +
+                "  \\ \\  \\___| \\ \\  \\ \\  \\ \\ \\  \\ \\  \\ \\ \\  \\  \\|\\ \\  \\    \\ \\  \\ \\ \\  \\ \\  \\ \\  \\____     \\/  /  /   \n" +
+                "   \\ \\__\\     \\ \\__\\ \\__\\ \\ \\__\\ \\__\\ \\ \\__\\ _\\ \\ \\__\\    \\ \\__\\ \\ \\__\\ \\__\\ \\_______\\ __/  / /    \n" +
+                "    \\|__|      \\|__|\\|__|  \\|__|\\|__|  \\|__|\\|__| \\|__|     \\|__|  \\|__|\\|__| \\|_______||\\___/ /     \n" +
+                "                                                                                     \\|___|/      \n" +
+                RESET);
+
     }
 
     private static void drawSpaceship() {
@@ -77,7 +80,7 @@ public class Menu {
                 "⠀                                ⠀⠀⠀⠀⠀⠀⠀⠀  ⠉⠉⠛⠛⠒⠒⠒⠒⠛⠛⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" + RESET);
     }
 
-    private static void displayMainMenu() {
+    public static void displayMainMenu() {
         final String CYAN = "\u001B[36m";
         final String RESET = "\u001B[0m";
         final String GREEN = "\u001B[32m";
@@ -86,10 +89,9 @@ public class Menu {
 
         drawSpaceship(); // Draw the spaceship
         System.out.println("                ========================= MAIN MENU ========================= \n");
-        System.out.println("                                           1." + CYAN + "SearchProduct" + RESET);
-        System.out.println("                                           2." + GREEN + "Sorting" + RESET);
-        System.out.println("                                           3." + GREEN + "Manage" + RESET);
-        System.out.println("                                           4." + RED + "Quit\n" + RESET);
+        System.out.println("                                           1." + CYAN + "Sign Up" + RESET);
+        System.out.println("                                           2." + GREEN + "Login" + RESET);
+        System.out.println("                                           3." + RED + "Quit\n" + RESET);
         System.out.println("                 ============================================================= ");
     }
 
