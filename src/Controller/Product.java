@@ -2,7 +2,7 @@ package Controller;
 
 import org.json.JSONObject;
 
-class Product {
+public class Product {
     private int id;
     private String nom;
     private double prix;

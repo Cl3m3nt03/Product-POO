@@ -4,14 +4,14 @@
             "sousCategorie": "Antibiotiques",
             "produits": [
                 {
-                    "quantiteStock": 104,
+                    "quantiteStock": 92,
                     "prix": 5.99,
                     "description": "Antibiotique à large spectre pour les infections bactériennes.",
                     "id": 1,
                     "nom": "Amoxicilline"
                 },
                 {
-                    "quantiteStock": 42,
+                    "quantiteStock": 36,
                     "prix": 7.49,
                     "description": "Traitement des infections respiratoires et ORL.",
                     "id": 2,
@@ -50,13 +50,6 @@
                     "description": "Antalgique pour les douleurs modérées à sévères.",
                     "id": 6,
                     "nom": "Tramadol"
-                },
-                {
-                    "quantiteStock": 123,
-                    "prix": 14,
-                    "description": "qdsqdqs",
-                    "id": 23,
-                    "nom": "qdqsdqs"
                 }
             ],
             "categorie": "Médicaments"

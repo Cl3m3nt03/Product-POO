@@ -1,6 +1,6 @@
 package Controller;
 
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -9,14 +9,13 @@ public abstract class Order {
 
     protected List<OrderItem> items;
     protected boolean isValidated;
-    protected Date orderDate;
+    protected String orderDate;
 
 
     public Order(List<OrderItem> items) {
         this.items = items;
         this.isValidated = false;
-        this.orderDate = new Date();
-
+        this.orderDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
     }
 
     public boolean validateOrder(Pharmacy pharmacy) {
@@ -32,8 +31,12 @@ public abstract class Order {
 
     public abstract void processOrder(Pharmacy pharmacy);
 
-    public Date getOrderDate() {
+    public String getOrderDate() {
         return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) { // Permettre le chargement depuis JSON
+        this.orderDate = orderDate;
     }
 
     public List<OrderItem> getItems() {

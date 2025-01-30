@@ -1,0 +1,15 @@
+[{
+    "date": "2025-01-30 16:13:24",
+    "items": [
+        {
+            "quantity": 2,
+            "productId": 1,
+            "productName": "Amoxicilline"
+        },
+        {
+            "quantity": 2,
+            "productId": 2,
+            "productName": "Azithromycine"
+        }
+    ]
+}]

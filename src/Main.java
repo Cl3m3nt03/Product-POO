@@ -1,4 +1,4 @@
-package Controller;
+import Controller.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,10 @@ import static Controller.Statistics.saveStatisticsToFile;
 
 public class Main {
 
-    private static OrderHistory orderHistory = new OrderHistory();
 
     public static void main(String[] args) {
+        OrderHistory orderHistory = new OrderHistory();
+
         // Create a Pharmacy object to manage the stock from the JSON file
         Pharmacy pharmacy = new Pharmacy("stocks_pharma.json");
         String textFilePath = "statistics.txt";
