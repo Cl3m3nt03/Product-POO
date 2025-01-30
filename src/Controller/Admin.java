@@ -3,9 +3,15 @@ package Controller;
 import Model.Rules;
 import org.json.simple.parser.ParseException;
 import view.Menu;
-
 import java.io.IOException;
 import java.util.Scanner;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Admin extends Client implements Rules {
 
@@ -46,6 +52,7 @@ public class Admin extends Client implements Rules {
                         Search.searchProduct();
                         break;
                     case "4":
+                        panelAdmin();
                         System.out.print("Admin");
                         break;
                     case "5":
@@ -145,5 +152,32 @@ public class Admin extends Client implements Rules {
     @Override
     public void Get_Rules() {
 
+    }
+
+    public static void panelAdmin() {
+        JSONParser parser = new JSONParser();
+
+        try (FileReader reader = new FileReader("users.json")) {
+            // Lire le fichier JSON
+            Object object = parser.parse(reader);
+            JSONArray usersArray = (JSONArray) object;
+
+            // Parcourir les utilisateurs
+            for (Object userObj : usersArray) {
+                JSONObject user = (JSONObject) userObj;
+                String name = (String) user.get("name");
+                String password = (String) user.get("password");
+                String status = (String) user.get("status");
+
+                // Afficher les informations des utilisateurs avec le statut "admin"
+                    System.out.println("Nom: " + name);
+                    System.out.println("Mot de passe: " + password);
+                    System.out.println("Statut: " + status);
+                    System.out.println();
+            }
+
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
     }
 }
