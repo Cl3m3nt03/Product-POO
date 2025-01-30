@@ -1,5 +1,13 @@
 [ {
-  "name" : "clem",
+  "name" : "cle",
+  "password" : "1234567",
+  "status" : "admin"
+}, {
+  "name" : "mat",
+  "password" : "123456",
+  "status" : "client"
+}, {
+  "name" : "ins",
   "password" : "123456",
   "status" : "client"
 } ]

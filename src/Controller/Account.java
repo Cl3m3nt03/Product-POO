@@ -15,38 +15,12 @@ import java.util.Scanner;
 
 public class Account {
 
-    public void loginAccount() throws IOException, ParseException {
-        System.out.print("Login Account \n");
-        Scanner scanner = new Scanner(System.in);
-        boolean next = false;
-
-        recoveryUser();
-        System.out.printf("Enter the name for player :  \n");
-            String name = scanner.nextLine();
-
-            System.out.printf("Enter the password  : \n");
-            String password = scanner.nextLine();
-
-        if(name.equals(users.get(0).getName()) && password.equals(users.get(0).getPassword())){
-            System.out.println(users.get(0).getStatus());
-            if (users.get(0).getStatus().equals("Client")){
-                Client client = new Client();
-                client.showMenu();
-            }else {
-                System.out.print("Login Admin \n");
-                Admin admin = new Admin();
-                admin.showMenu();
-            }
-        } else {
-            System.out.println("Invalid login \n");
-        }
-    }
-
     public List<Client> users = new ArrayList<>();
 
     public void CreateAccount() {
         boolean valid = false;
         Scanner scanner = new Scanner(System.in);
+        recoveryUser();
 
         while (!valid) {
             System.out.println("=== Création de Compte ===");
@@ -75,6 +49,34 @@ public class Account {
             saveUser();
         }
         Menu.drawTitle();
+    }
+
+    public void loginAccount() throws IOException, ParseException {
+        recoveryUser();
+        System.out.print("Login Account \n");
+        Scanner scanner = new Scanner(System.in);
+        boolean next = false;
+
+        System.out.printf("Enter the name for player :  \n");
+        String name = scanner.nextLine();
+
+        System.out.printf("Enter the password  : \n");
+        String password = scanner.nextLine();
+
+        for (User user : users) {
+            if (name.equals(user.getName()) && password.equals(user.getPassword())) {
+                System.out.println(user.getStatus());
+                if (user.getStatus().equalsIgnoreCase("client")) {
+                    Client client = new Client();
+                    client.showMenu();
+                } else {
+                    System.out.println("Login Admin \n");
+                    Admin admin = new Admin();
+                    admin.showMenu();
+                }
+                return; // On sort de la boucle dès qu'un utilisateur est trouvé
+            }
+        }
     }
     void saveUser() {
         ObjectMapper objectMapper = new ObjectMapper();
