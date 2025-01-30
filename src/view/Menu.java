@@ -1,10 +1,13 @@
 package view;
+import Controller.FastSorting;
 import Controller.Search;
+import org.json.simple.parser.ParseException;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
-    public static void setupMenu(){
+    public static void setupMenu() throws IOException, ParseException {
 
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
@@ -23,9 +26,14 @@ public class Menu {
                         Search.searchProduct();
                         break;
                     case "2":
+                        //call function
+                        FastSorting.FastSorting();
                         System.out.println("2");
                         break;
                     case "3":
+                        MenuManage.MenuManageProduct();
+                        break;
+                    case "4":
 
                         System.out.println("                 Thanks for playing. See you next time!");
                         System.exit(0);
@@ -78,9 +86,10 @@ public class Menu {
 
         drawSpaceship(); // Draw the spaceship
         System.out.println("                ========================= MAIN MENU ========================= \n");
-        System.out.println("                                           1." + CYAN + "Search" + RESET);
-        System.out.println("                                           2." + GREEN + "Rules" + RESET);
-        System.out.println("                                           3." + RED + "Quit\n" + RESET);
+        System.out.println("                                           1." + CYAN + "SearchProduct" + RESET);
+        System.out.println("                                           2." + GREEN + "Sorting" + RESET);
+        System.out.println("                                           3." + GREEN + "Manage" + RESET);
+        System.out.println("                                           4." + RED + "Quit\n" + RESET);
         System.out.println("                 ============================================================= ");
     }
 
