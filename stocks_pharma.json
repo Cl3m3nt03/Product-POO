@@ -23,13 +23,6 @@
                     "description": "Antibiotique utilisé pour les infections urinaires.",
                     "id": 3,
                     "nom": "Ciprofloxacine"
-                },
-                {
-                    "quantiteStock": 1314,
-                    "prix": 12,
-                    "description": "sdqdqsdqsdq",
-                    "id": 23,
-                    "nom": "CACA"
                 }
             ],
             "categorie": "Médicaments"
@@ -57,13 +50,6 @@
                     "description": "Antalgique pour les douleurs modérées à sévères.",
                     "id": 6,
                     "nom": "Tramadol"
-                },
-                {
-                    "quantiteStock": 123,
-                    "prix": 14,
-                    "description": "qdsqdqs",
-                    "id": 23,
-                    "nom": "qdqsdqs"
                 }
             ],
             "categorie": "Médicaments"

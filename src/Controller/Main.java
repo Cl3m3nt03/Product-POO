@@ -25,10 +25,10 @@ public class Main {
                 // Add a product
                 System.out.println("\n--- Add a product ---");
 
-                // Ask the user for product information
-                System.out.print("Enter the product id: ");
-                int id = scanner.nextInt();
-                scanner.nextLine();  // Consume the remaining newline
+                // Generate a unique ID
+                int id = pharmacy.getNextProductId();
+                System.out.println("Generated product ID: " + id);
+
 
                 System.out.print("Enter the product name: ");
                 String name = scanner.nextLine();
