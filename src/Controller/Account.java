@@ -10,10 +10,9 @@ import java.util.Scanner;
 
 public class Account {
 
-    public static
-    List<Client> users = new ArrayList<>();
+    public List<Client> users = new ArrayList<>();
 
-    public static void CreateAccount() {
+    public void CreateAccount() {
 
             Scanner scanner = new Scanner(System.in);
             System.out.print("Création de Compte \n");
@@ -24,14 +23,14 @@ public class Account {
             System.out.printf("Enter the password  : \n");
             String password = scanner.nextLine();
 
-            String status = "Client";
+            String status = "Admin";
 
             users.add(new Client("" + name, "" + password, "" + status));
 
         Menu.drawTitle();
     }
 
-    public static void loginAccount() throws IOException, ParseException {
+    public void loginAccount() throws IOException, ParseException {
         System.out.print("Login Account \n");
         Scanner scanner = new Scanner(System.in);
 
@@ -42,10 +41,14 @@ public class Account {
         String password = scanner.nextLine();
 
         if(name.equals(users.get(0).getName()) && password.equals(users.get(0).getPassword())){
+            System.out.println(users.get(0).getStatus());
             if (users.get(0).getStatus().equals("Client")){
-                users.get(0).showMenu(/* Ajouter du GOUANA */);
+                Client client = new Client();
+                client.showMenu();
             }else {
                 System.out.print("Login Admin \n");
+                Admin admin = new Admin();
+                admin.showMenu();
             }
         } else {
             System.out.println("Invalid login \n");

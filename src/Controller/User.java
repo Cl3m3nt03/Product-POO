@@ -10,6 +10,10 @@ public abstract class User {
     private String status;
     private int userID;
 
+    public User() {
+
+    }
+
     public abstract void showMenu() throws IOException, ParseException;
 
     public User(String name, String password, String status) {
