@@ -23,10 +23,10 @@ public class Pharmacy {
     // Method to add a product
     public void addProduct(Product product, String category, String subCategory) {
         // Get the "pharmacy" object in the JSON
-        JSONObject pharmacy = stock.getJSONObject("pharmacy");
+        JSONObject pharmacy = stock.getJSONObject("pharmacie");
 
         // Get the list of products in the pharmacy
-        JSONArray products = pharmacy.getJSONArray("products");
+        JSONArray products = pharmacy.getJSONArray("produits");
 
         // Variables to check if the category and sub-category are found
         boolean categoryFound = false;
@@ -38,18 +38,18 @@ public class Pharmacy {
             JSONObject productJSON = products.getJSONObject(i);
 
             // Debug: Print the category and sub-category
-            System.out.println("Checking category: " + productJSON.getString("category"));
-            System.out.println("Checking sub-category: " + productJSON.getString("subCategory"));
+            System.out.println("Checking category: " + productJSON.getString("categorie"));
+            System.out.println("Checking sub-category: " + productJSON.getString("sousCategorie"));
 
             // Check if the category and sub-category match
-            if (productJSON.getString("category").equals(category) &&
-                    productJSON.getString("subCategory").equals(subCategory)) {
+            if (productJSON.getString("categorie").equals(category) &&
+                    productJSON.getString("sousCategorie").equals(subCategory)) {
 
                 // If the category and sub-category are found, add the product
                 subCategoryFound = true;
                 categoryFound = true;
 
-                productJSON.getJSONArray("products").put(product.toJSON());  // Add the product
+                productJSON.getJSONArray("produits").put(product.toJSON());  // Add the product
                 System.out.println("Product added to the existing sub-category.");
 
                 // Save the JSON file after modification
@@ -73,10 +73,10 @@ public class Pharmacy {
     // Method to delete a product
     public void deleteProduct(int productId, String category, String subCategory) {
         // Get the "pharmacy" object in the JSON
-        JSONObject pharmacy = stock.getJSONObject("pharmacy");
+        JSONObject pharmacy = stock.getJSONObject("pharmacie");
 
         // Get the list of products in the pharmacy
-        JSONArray products = pharmacy.getJSONArray("products");
+        JSONArray products = pharmacy.getJSONArray("produits");
 
         // Variables to check if the category and sub-category are found
         boolean categoryFound = false;
@@ -89,19 +89,19 @@ public class Pharmacy {
             JSONObject productJSON = products.getJSONObject(i);
 
             // Debug: Print the category and sub-category
-            System.out.println("Checking category: " + productJSON.getString("category"));
-            System.out.println("Checking sub-category: " + productJSON.getString("subCategory"));
+            System.out.println("Checking category: " + productJSON.getString("categorie"));
+            System.out.println("Checking sub-category: " + productJSON.getString("sousCategorie"));
 
             // Check if the category and sub-category match
-            if (productJSON.getString("category").equals(category) &&
-                    productJSON.getString("subCategory").equals(subCategory)) {
+            if (productJSON.getString("categorie").equals(category) &&
+                    productJSON.getString("sousCategorie").equals(subCategory)) {
 
                 // If the category and sub-category are found
                 subCategoryFound = true;
                 categoryFound = true;
 
                 // Get the list of products in this sub-category
-                JSONArray subCategoryProducts = productJSON.getJSONArray("products");
+                JSONArray subCategoryProducts = productJSON.getJSONArray("produits");
 
                 // Loop through the products in the sub-category
                 for (int j = 0; j < subCategoryProducts.length(); j++) {

@@ -23,13 +23,6 @@
                     "description": "Antibiotique utilisé pour les infections urinaires.",
                     "id": 3,
                     "nom": "Ciprofloxacine"
-                },
-                {
-                    "quantiteStock": 1314,
-                    "prix": 12,
-                    "description": "sdqdqsdqsdq",
-                    "id": 23,
-                    "nom": "CACA"
                 }
             ],
             "categorie": "Médicaments"

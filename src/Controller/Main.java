@@ -1,12 +1,19 @@
 package Controller;
 
-import java.util.List;
+
 import java.util.Scanner;
+
+import static Controller.Statistics.saveStatisticsToFile;
 
 public class Main {
     public static void main(String[] args) {
         // Create a Pharmacy object to manage the stock from the JSON file
         Pharmacy pharmacy = new Pharmacy("stocks_pharma.json");
+        String textFilePath = "statistics.txt";
+        String jsonFilePath = "stocks_pharma.json";
+
+        saveStatisticsToFile(jsonFilePath, textFilePath);
+
 
         // Scanner to take user inputs
         Scanner scanner = new Scanner(System.in);
@@ -16,8 +23,9 @@ public class Main {
             System.out.println("===== Menu =====");
             System.out.println("1. Add a product");
             System.out.println("2. Delete a product");
-            System.out.println("3. Exit");
-            System.out.print("Choose an option (1/2/3): ");
+            System.out.println("3. Update statistics file");
+            System.out.println("4. Exit");
+            System.out.print("Choose an option (1/2/3/4): ");
             int choice = scanner.nextInt();
             scanner.nextLine();  // Consume the remaining newline
 
@@ -76,15 +84,22 @@ public class Main {
                 pharmacy.deleteProduct(productId, category, subCategory);
 
             } else if (choice == 3) {
+                // Update statistics file
+                System.out.println("\n--- Update Statistics File ---");
+
+                // Call the method to regenerate statistics
+                saveStatisticsToFile(jsonFilePath, textFilePath);
+            } else if (choice == 4) {
                 // Exit the application
                 System.out.println("Goodbye!");
                 break;
-            } else {
+            }
+            else {
                 // If the user enters an invalid option
                 System.out.println("Invalid option, please try again.");
             }
         }
-
         scanner.close();  // Close the scanner
+
     }
 }
