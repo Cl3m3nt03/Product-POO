@@ -23,7 +23,7 @@ public class Account {
             System.out.printf("Enter the password  : \n");
             String password = scanner.nextLine();
 
-            String status = "Admin";
+            String status = "client";
 
             users.add(new Client("" + name, "" + password, "" + status));
 

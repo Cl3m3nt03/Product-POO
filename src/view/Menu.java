@@ -13,6 +13,7 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
 
+        Account account = new Account();
         while (!quit) {
             // Display the main menu
             drawTitle();
@@ -24,10 +25,10 @@ public class Menu {
                 // Handle the user's choice
                 switch (choice) {
                     case "1":
-                        Account.CreateAccount();
+                        account.CreateAccount();
                         break;
                     case "2":
-                        Account.loginAccount();
+                        account.loginAccount();
                         break;
                     case "3":
 
