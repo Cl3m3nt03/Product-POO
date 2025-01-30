@@ -4,7 +4,7 @@
             "sousCategorie": "Antibiotiques",
             "produits": [
                 {
-                    "quantiteStock": 120,
+                    "quantiteStock": 118,
                     "prix": 5.99,
                     "description": "Antibiotique à large spectre pour les infections bactériennes.",
                     "id": 1,

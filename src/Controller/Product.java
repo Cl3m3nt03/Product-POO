@@ -18,6 +18,7 @@ class Product {
         this.description = description;
     }
 
+
     // Convertir un produit en objet JSON
     public JSONObject toJSON() {
         JSONObject productJSON = new JSONObject();

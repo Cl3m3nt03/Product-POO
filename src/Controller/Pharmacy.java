@@ -20,6 +20,46 @@ public class Pharmacy {
         }
     }
 
+    public boolean isStockAvailable(int productId, int quantity) {
+        JSONArray categories = stock.getJSONObject("pharmacie").getJSONArray("produits");
+
+        for (int i = 0; i < categories.length(); i++) {
+            JSONArray products = categories.getJSONObject(i).getJSONArray("produits");
+
+            for (int j = 0; j < products.length(); j++) {
+                if (i < products.length()) { // Check if the id exists
+                    JSONObject productObject = products.getJSONObject(i);
+                    if (productObject.getInt("id") == productId) {
+                        return productObject.getInt("quantiteStock") >= quantity;
+                    }
+                } else {
+                    System.out.println("Index " + i + " is out of bounds for products array.");
+                }
+            }
+        }
+        return false;
+    }
+
+    public void reduceStock(int productId, int quantity) {
+        JSONArray categories = stock.getJSONObject("pharmacie").getJSONArray("produits");
+
+        for (int i = 0; i < categories.length(); i++) {
+            JSONArray products = categories.getJSONObject(i).getJSONArray("produits");
+
+            for (int j = 0; j < products.length(); j++) {
+                JSONObject product = products.getJSONObject(j); // Retrieve the product object
+
+                if (product.getInt("id") == productId) { // Comparer l'ID
+                    int newStock = product.getInt("quantiteStock") - quantity;
+                    product.put("quantiteStock", Math.max(newStock, 0)); // Update stock
+
+                    saveStockToFile("stocks_pharma.json"); // Save modifications
+                    return;
+                }
+            }
+        }
+    }
+
     // Method to add a product
     public void addProduct(Product product, String category, String subCategory) {
         // Get the "pharmacy" object in the JSON
