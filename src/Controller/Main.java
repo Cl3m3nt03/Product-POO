@@ -7,6 +7,9 @@ import java.util.Scanner;
 import static Controller.Statistics.saveStatisticsToFile;
 
 public class Main {
+
+    private static OrderHistory orderHistory = new OrderHistory();
+
     public static void main(String[] args) {
         // Create a Pharmacy object to manage the stock from the JSON file
         Pharmacy pharmacy = new Pharmacy("stocks_pharma.json");
@@ -24,8 +27,9 @@ public class Main {
             System.out.println("2. Remove a product");
             System.out.println("3. Place a customer order");
             System.out.println("4. Update statistics file");
-            System.out.println("5. Exit");
-            System.out.print("Choose an option (1/2/3/4/5): ");
+            System.out.println("5. View order history");
+            System.out.println("6. Exit");
+            System.out.print("Choose an option (1/2/3/4/5/6): ");
             int choice = scanner.nextInt();
             scanner.nextLine();  // Consume the remaining newline
 
@@ -92,8 +96,12 @@ public class Main {
                     int quantity = scanner.nextInt();
                     scanner.nextLine(); // Consume the newline
 
-                    orderItems.add(new OrderItem(productId, quantity));
-                }
+                    String productName = pharmacy.getProductNameById(productId);
+                    if (productName != null) {
+                        orderItems.add(new OrderItem(productId, quantity, productName));
+                    } else {
+                        System.out.println("Product ID not found.");
+                    }                }
 
                 // Choose order type
                 System.out.print("Order type (1: Standard, 2: Urgent): ");
@@ -110,6 +118,9 @@ public class Main {
                 // Validate and process the order
                 if (order.validateOrder(pharmacy)) {
                     order.processOrder(pharmacy);
+                    // Ajouter la commande à l'historique
+                    orderHistory.addOrder(order);
+                    System.out.println("Order added to history.");
                 } else {
                     System.out.println("Invalid order: insufficient stock.");
                 }
@@ -120,6 +131,10 @@ public class Main {
                 saveStatisticsToFile(jsonFilePath, textFilePath);
 
             } else if (choice == 5) {
+                // View order history
+                orderHistory.displayOrderHistory();
+
+            } else if (choice == 6) {
                 // Exit the application
                 System.out.println("Goodbye!");
                 break;

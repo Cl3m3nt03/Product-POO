@@ -11,12 +11,12 @@ Description: Brosse à dents électrique avec plusieurs modes.
   - Brosse à dents électrique: 485 units sold
   - Tramadol: 475 units sold
   - Sérum anti-âge: 460 units sold
-  - Azithromycine: 450 units sold
+  - Azithromycine: 456 units sold
   - Oméga-3: 440 units sold
   - Ciprofloxacine: 425 units sold
   - Crème hydratante: 420 units sold
   - Vitamine D: 410 units sold
-  - Amoxicilline: 380 units sold
+  - Amoxicilline: 394 units sold
   - Vitamine C: 380 units sold
   - qdqsdqs: 377 units sold
   - Gel nettoyant visage: 350 units sold

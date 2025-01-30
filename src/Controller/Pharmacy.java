@@ -20,6 +20,22 @@ public class Pharmacy {
         }
     }
 
+    public String getProductNameById(int productId) {
+        JSONArray categories = stock.getJSONObject("pharmacie").getJSONArray("produits");
+
+        for (int i = 0; i < categories.length(); i++) {
+            JSONArray products = categories.getJSONObject(i).getJSONArray("produits");
+
+            for (int j = 0; j < products.length(); j++) {
+                JSONObject productObject = products.getJSONObject(j);
+                if (productObject.getInt("id") == productId) {
+                    return productObject.getString("nom");  // Retourner le nom du produit
+                }
+            }
+        }
+        return null;  // Si le produit n'est pas trouvé
+    }
+
     public boolean isStockAvailable(int productId, int quantity) {
         JSONArray categories = stock.getJSONObject("pharmacie").getJSONArray("produits");
 
@@ -27,13 +43,9 @@ public class Pharmacy {
             JSONArray products = categories.getJSONObject(i).getJSONArray("produits");
 
             for (int j = 0; j < products.length(); j++) {
-                if (i < products.length()) { // Check if the id exists
-                    JSONObject productObject = products.getJSONObject(i);
-                    if (productObject.getInt("id") == productId) {
-                        return productObject.getInt("quantiteStock") >= quantity;
-                    }
-                } else {
-                    System.out.println("Index " + i + " is out of bounds for products array.");
+                JSONObject productObject = products.getJSONObject(j);
+                if (productObject.getInt("id") == productId) {
+                    return productObject.getInt("quantiteStock") >= quantity;
                 }
             }
         }
