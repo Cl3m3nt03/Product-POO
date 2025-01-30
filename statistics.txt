@@ -1,0 +1,27 @@
+===== STATISTIQUES DES VENTES =====
+
+📌 Produit le plus vendu :
+Nom: Brosse à dents électrique
+ID: 10
+Prix: 39.99 €
+Stock restant: 3
+Description: Brosse à dents électrique avec plusieurs modes.
+
+📊 Quantités vendues par produit :
+  - Brosse à dents électrique: 497 units sold
+  - Tramadol: 475 units sold
+  - Sérum anti-âge: 460 units sold
+  - Azithromycine: 450 units sold
+  - Oméga-3: 440 units sold
+  - Ciprofloxacine: 425 units sold
+  - Crème hydratante: 420 units sold
+  - Vitamine D: 410 units sold
+  - Amoxicilline: 380 units sold
+  - Vitamine C: 380 units sold
+  - Gel nettoyant visage: 350 units sold
+  - Bain de bouche antiseptique: 320 units sold
+  - Ibuprofène: 300 units sold
+  - Dentifrice blancheur: 250 units sold
+  - Paracétamol: 200 units sold
+
+💰 Chiffre d'affaires total : 0.0 €

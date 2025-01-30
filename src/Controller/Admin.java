@@ -48,6 +48,12 @@ public class Admin extends Client implements Rules {
                         System.out.print("Admin");
                         break;
                     case "5":
+                        String textFilePath = "statistics.txt";
+                        String jsonFilePath = "stocks_pharma.json";
+                        Statistics.saveStatisticsToFile(jsonFilePath, textFilePath);
+
+                        break;
+                    case "6":
 
                         System.out.println("                 Thanks for playing. See you next time!");
                         System.exit(0);
@@ -76,9 +82,10 @@ public class Admin extends Client implements Rules {
         System.out.println("                                           2." + GREEN + "Product in stock" + RESET);
         System.out.println("                                           3." + YELLOW + "Search" + RESET);
         System.out.println("                ============================ Panel Admin ======================= ");
-        System.out.println("                                           4." + RED + "Admin" + RESET);
+        System.out.println("                                           4." + RED + "PanelAdmin" + RESET);
+        System.out.println("                                           5." + RED + "Statistic" + RESET);
         System.out.println("                 ============================================================= ");
-        System.out.println("                                           5." + RED + "Quit\n" + RESET);
+        System.out.println("                                           6." + RED + "Quit\n" + RESET);
         System.out.println("                 ============================================================= ");
     }
 
