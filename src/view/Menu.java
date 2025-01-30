@@ -31,6 +31,9 @@ public class Menu {
                         System.out.println("2");
                         break;
                     case "3":
+                        MenuManage.MenuManageProduct();
+                        break;
+                    case "4":
 
                         System.out.println("                 Thanks for playing. See you next time!");
                         System.exit(0);
@@ -83,9 +86,10 @@ public class Menu {
 
         drawSpaceship(); // Draw the spaceship
         System.out.println("                ========================= MAIN MENU ========================= \n");
-        System.out.println("                                           1." + CYAN + "Play Game" + RESET);
-        System.out.println("                                           2." + GREEN + "Rules" + RESET);
-        System.out.println("                                           3." + RED + "Quit\n" + RESET);
+        System.out.println("                                           1." + CYAN + "SearchProduct" + RESET);
+        System.out.println("                                           2." + GREEN + "Sorting" + RESET);
+        System.out.println("                                           3." + GREEN + "Manage" + RESET);
+        System.out.println("                                           4." + RED + "Quit\n" + RESET);
         System.out.println("                 ============================================================= ");
     }
 
