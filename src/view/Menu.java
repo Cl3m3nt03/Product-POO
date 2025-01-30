@@ -32,7 +32,7 @@ public class Menu {
                         break;
                     case "3":
 
-                        System.out.println("                 Thanks for playing. See you next time!");
+                        System.out.println("                 Thanks . See you next time!");
                         System.exit(0);
                         quit = true;
                         break;

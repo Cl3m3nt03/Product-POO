@@ -69,12 +69,14 @@ public class Account {
                 if (user.getStatus().equalsIgnoreCase("client")) {
                     Client client = new Client();
                     client.showMenu();
+                } else if (user.getStatus().equalsIgnoreCase("employed")) {
+                    Employed employed = new Employed();
+                    employed.showMenu();
                 } else {
-                    System.out.println("Login Admin \n");
                     Admin admin = new Admin();
                     admin.showMenu();
                 }
-                return; // On sort de la boucle dès qu'un utilisateur est trouvé
+                return;
             }
         }
     }
