@@ -23,5 +23,6 @@ Description: Brosse à dents électrique avec plusieurs modes.
   - Ibuprofène: 300 units sold
   - Dentifrice blancheur: 250 units sold
   - Paracétamol: 200 units sold
+  - test: 50 units sold
 
 💰 Chiffre d'affaires total : 0.0 €
