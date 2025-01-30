@@ -14,6 +14,10 @@ public class Client extends User implements Rules {
         super(name, password, status);
     }
 
+    public Client() {
+        super();
+    }
+
     public void get_user_info() {
         System.out.print("Le Pseudo : " + this.getName() + "Le Mot de passe" +this.getPassword());
     }
@@ -43,7 +47,7 @@ public class Client extends User implements Rules {
                         System.out.println("2");
                         break;
                     case "3":
-                        MenuManage.MenuManageProduct();
+                        Search.searchProduct();
                         break;
                     case "4":
 
@@ -73,7 +77,8 @@ public class Client extends User implements Rules {
             System.out.println("                ========================= MAIN MENU ========================= \n");
             System.out.println("                                           1." + CYAN + "Command" + RESET);
             System.out.println("                                           2." + GREEN + "Product in stock" + RESET);
-            System.out.println("                                           3." + RED + "Quit\n" + RESET);
+            System.out.println("                                           3." + YELLOW + "Search" + RESET);
+            System.out.println("                                           4." + RED + "Quit\n" + RESET);
             System.out.println("                 ============================================================= ");
     }
 
