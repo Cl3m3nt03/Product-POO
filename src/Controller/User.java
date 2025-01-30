@@ -1,14 +1,13 @@
 package Controller;
-
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
 
 public abstract class User {
-    private String name;
-    private String password;
-    private String status;
-    private int userID;
+    protected String name;
+    protected String password;
+    protected String status;
+    protected int userID;
 
     public User() {
 
@@ -45,5 +44,4 @@ public abstract class User {
     public void setStatus(String status) {
         this.status = status;
     }
-
 }

@@ -1,14 +1,13 @@
 package Controller;
-
 import org.json.simple.parser.ParseException;
 import view.Menu;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Account {
+public class Account{
 
     public List<Client> users = new ArrayList<>();
 

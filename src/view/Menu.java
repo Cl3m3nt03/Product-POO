@@ -1,8 +1,5 @@
 package view;
 import Controller.Account;
-import Controller.FastSorting;
-import Controller.Pharmacy;
-import Controller.Search;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
@@ -55,7 +52,6 @@ public class Menu {
         final String YELLOW = "\u001B[33m";
         final String GREEN = "\u001B[32m";
 
-
         System.out.println(GREEN +
                 " ________   ___  ___   ________   ________   _____ ______    ________   ________       ___    ___  \n" +
                 "|\\   __  \\ |\\  \\|\\  \\ |\\   __  \\ |\\   __  \\ |\\   _ \\  _   \\ |\\   __  \\ |\\   ____\\     |\\  \\  /  /| \n" +
@@ -66,7 +62,6 @@ public class Menu {
                 "    \\|__|      \\|__|\\|__|  \\|__|\\|__|  \\|__|\\|__| \\|__|     \\|__|  \\|__|\\|__| \\|_______||\\___/ /     \n" +
                 "                                                                                     \\|___|/      \n" +
                 RESET);
-
     }
 
     private static void drawSpaceship() {
@@ -98,5 +93,4 @@ public class Menu {
         System.out.println("                                           3." + RED + "Quit\n" + RESET);
         System.out.println("                 ============================================================= ");
     }
-
 }

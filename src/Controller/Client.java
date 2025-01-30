@@ -6,16 +6,16 @@ import view.Menu;
 import view.MenuManage;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Client extends User implements Rules {
+public class Client extends User implements Rules{
 
     public Client(String name, String password, String status) {
         super(name, password, status);
     }
 
     public Client() {
-        super();
     }
 
     public void get_user_info() {
@@ -84,6 +84,5 @@ public class Client extends User implements Rules {
 
     @Override
     public void Get_Rules() {
-
     }
 }

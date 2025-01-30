@@ -14,7 +14,7 @@ public class Admin extends Client implements Rules {
     }
 
     public Admin() {
-
+        super();
     }
 
     @Override
@@ -84,6 +84,5 @@ public class Admin extends Client implements Rules {
 
     @Override
     public void Get_Rules() {
-
     }
 }
