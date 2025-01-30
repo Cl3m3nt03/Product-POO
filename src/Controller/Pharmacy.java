@@ -137,6 +137,29 @@ public class Pharmacy {
         }
     }
 
+    public int getNextProductId() {
+        JSONObject pharmacyData = stock.getJSONObject("pharmacie");
+        JSONArray categories = pharmacyData.getJSONArray("produits");
+
+        int maxId = 0;
+
+        // Parcourir toutes les catégories et sous-catégories pour trouver le plus grand ID
+        for (int i = 0; i < categories.length(); i++) {
+            JSONObject category = categories.getJSONObject(i);
+            JSONArray products = category.getJSONArray("produits");
+
+            for (int j = 0; j < products.length(); j++) {
+                JSONObject product = products.getJSONObject(j);
+                int currentId = product.getInt("id");
+                if (currentId > maxId) {
+                    maxId = currentId;
+                }
+            }
+        }
+
+        return maxId + 1; // Retourne un nouvel ID unique
+    }
+
     // Method to save the JSON file after modification
     private void saveStockToFile(String filePath) {
         try (FileWriter file = new FileWriter(filePath)) {
