@@ -1,15 +1,14 @@
 package Controller;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import java.io.FileReader;
-import java.io.IOException;
+
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Comparator;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import java.io.FileWriter;
 
 
 public class Pharmacy {
@@ -34,7 +33,7 @@ public class Pharmacy {
     public static void ReadJson(){
             JSONParser parser = new JSONParser();
 
-            try (FileReader reader = new FileReader("stocks_pharma.json")) {
+            try (FileReader reader = new FileReader("src\\stocks_pharma.json")) {
                 // Read JSON file
                 Object object = parser.parse(reader);
                 JSONObject jsonObject = (JSONObject) object;
@@ -117,7 +116,7 @@ public class Pharmacy {
                 System.out.println("Product added to the existing sub-category.");
 
                 // Save the JSON file after modification
-                saveStockToFile("stocks_pharma.json");
+                saveStockToFile("src\\stocks_pharma.json");
 
                 return;  // Exit as soon as the product is added
             }
@@ -179,7 +178,7 @@ public class Pharmacy {
                         System.out.println("Product deleted from the sub-category.");
 
                         // Save the JSON file after modification
-                        saveStockToFile("stocks_pharma.json");
+                        saveStockToFile("src\\stocks_pharma.json");
                         return;  // Exit as soon as the product is deleted
                     }
                 }
@@ -201,7 +200,6 @@ public class Pharmacy {
         }
     }
 
-
     public int getNextProductId() {
         JSONObject pharmacyData = stock.getJSONObject("pharmacie");
         JSONArray categories = pharmacyData.getJSONArray("produits");
@@ -221,8 +219,25 @@ public class Pharmacy {
                 }
             }
         }
-
         return maxId + 1; // Retourne un nouvel ID unique
+    }
+    public void serializeJson(String filePath) {
+        File fichier =  new File(filePath) ;
+
+        // ouverture d'un flux sur un fichier
+        ObjectOutputStream oos = null;
+        try {
+            oos = new ObjectOutputStream(new FileOutputStream(fichier));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        // sérialization de l'objet
+        try {
+            oos.writeObject(this.stock.toString()) ;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     // Method to save the JSON file after modification
@@ -233,5 +248,4 @@ public class Pharmacy {
             e.printStackTrace();
         }
     }
-
 }

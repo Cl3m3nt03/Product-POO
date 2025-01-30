@@ -67,6 +67,5 @@ public class Product implements Comparable<Product> {
         productJSON.put("description", this.description);
         return productJSON;
     }
-
 }
 

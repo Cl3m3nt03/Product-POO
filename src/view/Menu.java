@@ -1,8 +1,8 @@
 package view;
 import Controller.FastSorting;
+import Controller.Pharmacy;
 import Controller.Search;
 import org.json.simple.parser.ParseException;
-
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -28,13 +28,11 @@ public class Menu {
                     case "2":
                         //call function
                         FastSorting.FastSorting();
-                        System.out.println("2");
                         break;
                     case "3":
                         MenuManage.MenuManageProduct();
                         break;
                     case "4":
-
                         System.out.println("                 Thanks for playing. See you next time!");
                         System.exit(0);
                         quit = true;

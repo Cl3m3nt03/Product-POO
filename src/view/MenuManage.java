@@ -7,8 +7,10 @@ import java.util.Scanner;
 
 public class MenuManage {
     public static void MenuManageProduct(){
+
         // Create a Pharmacy object to manage the stock from the JSON file
-        Pharmacy pharmacy = new Pharmacy("stocks_pharma.json");
+        Pharmacy pharmacy = new Pharmacy("src\\stocks_pharma.json");
+        pharmacy.serializeJson("C:\\Users\\theol\\OneDrive\\Bureau\\stock_pharmacy.cer");
 
         // Scanner to take user inputs
         Scanner scanner = new Scanner(System.in);
