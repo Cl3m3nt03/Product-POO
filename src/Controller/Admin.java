@@ -35,7 +35,7 @@ public class Admin extends Client implements Rules {
                 // Handle the user's choice
                 switch (choice) {
                     case "1":
-                        Search.searchProduct();
+                        Order order = new Order();
                         break;
                     case "2":
                         //call function
