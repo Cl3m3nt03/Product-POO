@@ -18,6 +18,7 @@ public class Employed extends Client implements Rules {
         }
 
         @Override
+        //showmenu for Employed
         public void showMenu() throws IOException, ParseException {
 
             Pharmacy pharmacy = new Pharmacy("stocks_pharma.json");
@@ -25,14 +26,11 @@ public class Employed extends Client implements Rules {
             boolean quit = false;
 
             while (!quit) {
-                // Display the main menu
                 Menu.drawTitle();
                 displayMainMenuAdmin();
-                // Get user's choice
                 System.out.print("                 Enter your choice: ");
                 if (sc.hasNextLine()){
                     String choice = sc.nextLine();
-                    // Handle the user's choice
                     switch (choice) {
                         case "1":
                             Order order = new Order();
@@ -112,12 +110,12 @@ public class Employed extends Client implements Rules {
                             break;
                     }
                 }
-                // Add a blank line for readability
                 System.out.println();
             }
             sc.close();
         }
 
+        //Show Visual Employed menu
         private void displayMainMenuAdmin() {
             final String CYAN = "\u001B[36m";
             final String RESET = "\u001B[0m";

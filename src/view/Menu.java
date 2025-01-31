@@ -18,14 +18,12 @@ public class Menu {
             // Display the main menu
             drawTitle();
             displayMainMenu();
-            // Get user's choice
             System.out.print("                 Enter your choice: ");
             if (scanner.hasNextLine()){
                 String choice = scanner.nextLine();
-                // Handle the user's choice
                 switch (choice) {
                     case "1":
-                        account.CreateAccount();
+                        account.CreateAccount("client");
                         break;
                     case "2":
                         account.loginAccount();

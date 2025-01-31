@@ -16,41 +16,40 @@ import java.util.Scanner;
 public class Account {
 
     public List<Client> users = new ArrayList<>();
-
-    public void CreateAccount() {
+// Create Account
+    public void CreateAccount(String status) {
         boolean valid = false;
         Scanner scanner = new Scanner(System.in);
         recoveryUser();
 
         while (!valid) {
-            System.out.println("=== Création de Compte ===");
+            System.out.println("=== Create Account ===");
 
-            System.out.print("Entrez votre nom : ");
+            System.out.print("Enter Your Name : ");
             String name = scanner.nextLine().trim();
 
             if (name.isEmpty()) {
-                System.out.println("Erreur : Le nom ne peut pas être vide !");
+                System.out.println("Error : Name cannot be empty");
                 continue;
             }
 
-            System.out.print("Entrez votre mot de passe (min. 6 caractères) : ");
+            System.out.print("Enter Your Password : ");
             String password = scanner.nextLine().trim();
 
             if (password.length() < 6) {
-                System.out.println("Erreur : Le mot de passe doit contenir au moins 6 caractères !");
+                System.out.println("Error : Password must be at least 6 characters long");
                 continue;
             }
 
-            String status = "client";
             users.add(new Client(name, password, status));
             valid = true;
-            System.out.println("Compte créé avec succès !");
+            System.out.println("Account created successfully");
 
             saveUser();
         }
         Menu.drawTitle();
     }
-
+//Connect Account
     public void loginAccount() throws IOException, ParseException {
         recoveryUser();
         System.out.print("Login Account \n");
@@ -80,6 +79,7 @@ public class Account {
             }
         }
     }
+    //Function save after create user
     void saveUser() {
         ObjectMapper objectMapper = new ObjectMapper();
         File file = new File("users.json");
@@ -91,6 +91,7 @@ public class Account {
         }
     }
 
+    //recup user before action
     private void recoveryUser() {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);

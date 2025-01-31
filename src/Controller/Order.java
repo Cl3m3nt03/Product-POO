@@ -19,7 +19,7 @@ public class Order {
     private boolean isPriority;
     private int productQuantity;
 
-    // Constructeur
+    // Constructor
     public Order() {
         this.orderNumber = generateOrderNumber();
         this.orderDate = LocalDate.now().toString();
@@ -31,12 +31,12 @@ public class Order {
         processOrder();
     }
 
-    // Générer un numéro de commande unique
+    // Generate number command
     private String generateOrderNumber() {
         return UUID.randomUUID().toString();
     }
 
-    // Processus de commande
+    // Process command
     private void processOrder() {
         Scanner scanner = new Scanner(System.in);
         boolean productFound = false;
@@ -73,15 +73,15 @@ public class Order {
                             System.out.println("✅ Produit trouvé : " + productNameInStock);
                             System.out.println("📦 Quantité en stock : " + stockQuantity);
 
-                            // Demande de quantité avec vérification
+                            // Request quantity with verif
                             while (true) {
                                 System.out.println("Combien d'unités voulez-vous acheter ? (Disponible : " + stockQuantity + ")");
                                 if (scanner.hasNextInt()) {
                                     quantityRequested = scanner.nextInt();
-                                    scanner.nextLine(); // Éviter le problème de retour à la ligne
+                                    scanner.nextLine();
 
                                     if (quantityRequested > 0 && quantityRequested <= stockQuantity) {
-                                        break; // Quantité valide, on sort de la boucle
+                                        break;
                                     } else {
                                         System.out.println("❌ Quantité invalide. Veuillez réessayer.");
                                     }
@@ -91,11 +91,11 @@ public class Order {
                                 }
                             }
 
-                            // Mettre à jour les valeurs avant d'enregistrer
+                            // Update values before save
                             this.product = productNameInStock;
                             this.productQuantity = quantityRequested;
 
-                            // Mettre à jour le stock et sauvegarder
+                            // Update Stock and save
                             updateStock(jsonObject, productDetail, productNameInStock, stockQuantity, quantityRequested);
                             saveOrderToFile();
                             break;
@@ -115,14 +115,14 @@ public class Order {
         }
     }
 
-    // Sauvegarde de la commande
+    // Save command
     private void saveOrderToFile() {
         JSONParser parser = new JSONParser();
         JSONArray commands = new JSONArray();
         File file = new File("command.json");
 
         try {
-            // Vérifier si le fichier existe et qu'il n'est pas vide
+            // Verif IF file exist and is not empty
             if (file.exists() && file.length() > 0) {
                 FileReader reader = new FileReader(file);
                 Object obj = parser.parse(reader);

@@ -208,7 +208,7 @@ public class Pharmacy {
 
         int maxId = 0;
 
-        // Parcourir toutes les catégories et sous-catégories pour trouver le plus grand ID
+        // check category and sub-category to find the highest id
         for (int i = 0; i < categories.length(); i++) {
             JSONObject category = categories.getJSONObject(i);
             JSONArray products = category.getJSONArray("produits");

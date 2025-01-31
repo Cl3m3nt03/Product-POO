@@ -61,7 +61,7 @@ public class Search extends Product {
 
         } while (continueSearch);
     }
-
+// Function search Product
     public static int binarySearch(ArrayList<Product> products, String target) {
         int left = 0, right = products.size() - 1;
         target = target.toLowerCase();

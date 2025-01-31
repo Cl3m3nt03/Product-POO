@@ -10,6 +10,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import view.PanelMenu;
+
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -24,6 +26,7 @@ public class Admin extends Client implements Rules {
     }
 
     @Override
+    //ShowMenu Admin !
     public void showMenu() throws IOException, ParseException {
 
         Pharmacy pharmacy = new Pharmacy("stocks_pharma.json");
@@ -122,12 +125,11 @@ public class Admin extends Client implements Rules {
                         break;
                 }
             }
-            // Add a blank line for readability
             System.out.println();
         }
         sc.close();
     }
-
+    //Visual for user
     private void displayMainMenuAdmin() {
         final String CYAN = "\u001B[36m";
         final String RESET = "\u001B[0m";
@@ -154,6 +156,7 @@ public class Admin extends Client implements Rules {
 
     }
 
+    //Function display * user and call function create employed
     public static void panelAdmin() {
         JSONParser parser = new JSONParser();
 
@@ -169,12 +172,13 @@ public class Admin extends Client implements Rules {
                 String password = (String) user.get("password");
                 String status = (String) user.get("status");
 
-                // Afficher les informations des utilisateurs avec le statut "admin"
                     System.out.println("Nom: " + name);
                     System.out.println("Mot de passe: " + password);
                     System.out.println("Statut: " + status);
                     System.out.println();
             }
+
+            PanelMenu.showMenu();
 
         } catch (IOException | ParseException e) {
             e.printStackTrace();
