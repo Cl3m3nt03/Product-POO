@@ -222,9 +222,9 @@ public class Pharmacy {
         return maxId + 1; // Retourne un nouvel ID unique
     }
     public void serializeJson(String filePath) {
-        File fichier =  new File(filePath) ;
+        File fichier =  new File(filePath) ; //Creating a ‘File’ file
 
-        // ouverture d'un flux sur un fichier
+        // open a stream on a file
         ObjectOutputStream oos = null;
         try {
             oos = new ObjectOutputStream(new FileOutputStream(fichier));
@@ -234,7 +234,7 @@ public class Pharmacy {
 
         // sérialization de l'objet
         try {
-            oos.writeObject(this.stock.toString()) ;
+            oos.writeObject(this.stock.toString());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

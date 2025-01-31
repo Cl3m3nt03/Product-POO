@@ -62,22 +62,23 @@ public class Search extends Product {
         } while (continueSearch);
     }
 
-    public static int binarySearch(ArrayList<Product> products, String target) {
-        int left = 0, right = products.size() - 1;
-        target = target.toLowerCase();
+    public static int binarySearch(ArrayList<Product> products, String research) {
+        int left = 0;
+        int right = products.size() - 1;
+        research = research.toLowerCase(); //product research
 
-        while (left <= right) {
+        while (left <= right) { // Start loop
             int mid = left + (right - left) / 2;
-            String midName = products.get(mid).getName().toLowerCase();
+            String midName = products.get(mid).getName().toLowerCase(); //research in middle
 
-            if (midName.equals(target)) {
+            if (midName.equals(research)) {
                 return mid;
-            } else if (midName.compareTo(target) < 0) {
-                left = mid + 1;
+            } else if (midName.compareTo(research) < 0) {
+                left = mid + 1; //midName before research
             } else {
-                right = mid - 1;
+                right = mid - 1; // midName after research
             }
         }
-        return -1;
+        return -1; //product no find
     }
 }
