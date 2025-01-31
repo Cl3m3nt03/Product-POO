@@ -24,6 +24,9 @@ public class PanelMenu {
                         System.out.println("1");
                         break;
                     case "2":
+                        account.DeleteAccount();
+                        break;
+                    case "3":
                         System.out.println("                 Thanks . See you next time!");
                         System.exit(0);
                         quit = true;
@@ -48,6 +51,7 @@ public class PanelMenu {
 
         System.out.println("                ========================= Panel MENU ========================= \n");
         System.out.println("                                           1." + CYAN + "Add Employed" + RESET);
+        System.out.println("                                           2." + CYAN + "Del Employed" + RESET);
         System.out.println("                 ============================================================= ");
         System.out.println("                                           2." + RED + "Quit" + RESET);
         System.out.println("                 ============================================================= ");
