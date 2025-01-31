@@ -1,0 +1,25 @@
+[ {
+  "name" : "cle",
+  "password" : "1234567",
+  "status" : "admin"
+}, {
+  "name" : "mat",
+  "password" : "123456",
+  "status" : "employed"
+}, {
+  "name" : "ins",
+  "password" : "123456",
+  "status" : "employed"
+}, {
+  "name" : "employed",
+  "password" : "123456",
+  "status" : "employed"
+}, {
+  "name" : "test",
+  "password" : "123456",
+  "status" : "client"
+}, {
+  "name" : "test1",
+  "password" : "123456",
+  "status" : "employed"
+} ]

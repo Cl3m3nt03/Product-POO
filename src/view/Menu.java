@@ -1,5 +1,7 @@
 package view;
 import Controller.Account;
+import Controller.FastSorting;
+import Controller.Search;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
@@ -16,23 +18,19 @@ public class Menu {
             // Display the main menu
             drawTitle();
             displayMainMenu();
-            // Get user's choice
             System.out.print("                 Enter your choice: ");
             if (scanner.hasNextLine()){
                 String choice = scanner.nextLine();
-                // Handle the user's choice
                 switch (choice) {
                     case "1":
-                        account.CreateAccount();
+                        account.CreateAccount("client");
                         break;
                     case "2":
                         account.loginAccount();
                         break;
                     case "3":
-                        MenuManage.MenuManageProduct();
-                        break;
-                    case "4":
-                        System.out.println("                 Thanks for playing. See you next time!");
+
+                        System.out.println("                 Thanks . See you next time!");
                         System.exit(0);
                         quit = true;
                         break;
@@ -52,6 +50,7 @@ public class Menu {
         final String YELLOW = "\u001B[33m";
         final String GREEN = "\u001B[32m";
 
+
         System.out.println(GREEN +
                 " ________   ___  ___   ________   ________   _____ ______    ________   ________       ___    ___  \n" +
                 "|\\   __  \\ |\\  \\|\\  \\ |\\   __  \\ |\\   __  \\ |\\   _ \\  _   \\ |\\   __  \\ |\\   ____\\     |\\  \\  /  /| \n" +
@@ -62,6 +61,7 @@ public class Menu {
                 "    \\|__|      \\|__|\\|__|  \\|__|\\|__|  \\|__|\\|__| \\|__|     \\|__|  \\|__|\\|__| \\|_______||\\___/ /     \n" +
                 "                                                                                     \\|___|/      \n" +
                 RESET);
+
     }
 
     private static void drawSpaceship() {
@@ -69,15 +69,23 @@ public class Menu {
         final String RESET = "\u001B[0m";
 
         System.out.println(GREEN +
-                "                                ⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀  ⢀⣠⠴⠶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
-                "                                ⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⣠⠞⠉⠀⠀⠀ ⠀⠾⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
-                "                                ⠀⠀⠀⠀⠀ ⣠⡤⠶⢾⠃⠀⠀⠀⠀⠀⠀⠀  ⠈⠛⠈⣷⠶⠤⣄⡀⠀⠀⠀⠀\n" +
-                "                                ⠀⠀⢀⡴⠋⢡⣖⡆⢹⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⢀⡾  ⢰⣲⡌⠙⢦⡀⠀⠀\n" +
-                "                                ⠀⢸⡁⠀⠀⠉⢁⡤⡝⠳⢤⣤⣄⣀⣀⣀⣤⡤⠶⢫⡤⡌⠉⠀⠀⠀   ⡷⠀⠀\n" +
-                "⠀                                ⠈⠳⣄⠀⠀⠈⠛⠁ ⠀⣞⡶⠀⡴⢦⠀⢴⣳⠀⠈⠛⠁⠀⠀   ⣀⡾⠁⠀⠀\n" +
-                "                                ⠀⠀⠀⠀⠈⠙⠶⢤⣄⣀⠀⠀⠀  ⠙⠋⠀⠀⠁  ⠀⣀⣀⣤⠴⠛⠁⠀⠀⠀⠀\n" +
-                "⠀                                ⠀⠀⠀⠀⠀⠀⠀⠀  ⠉⠉⠛⠛⠒⠒⠒⠒⠛⠛⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" + RESET);
-    }
+                "                  ....................:-=****#****+-:....................\n" +
+                "                  .................:-*#+=:.......:-+#*=:.................\n" +
+                "                  ..............-**:.......=+++=.......:*#-..............\n" +
+                "                  .............-#=.........+++++.........=#=.............\n" +
+                "                  ............-*+..........+++++..........=*-............\n" +
+                "                  ............+*-..........+++++..........:*+:...........\n" +
+                "                  ...........:*+...:=+++++++++++++++++=:...=*:...........\n" +
+                "                  ...........-*=...=+++++++++++++++++++=...=*-...........\n" +
+                "                  ...........:*+...:=+++++++++++++++++=-...=*:...........\n" +
+                "                  ............+*:..........+++++..........:*+:...........\n" +
+                "                  ............-*=..........+++++..........=*-............\n" +
+                "                  .............=#=.........+++++.........=#=.............\n" +
+                "                  ..............-**:.......=++++.......:**-..............\n" +
+                "                  .................:=**+-:.......:-+**=:.................\n" +
+                "                  ....................:-+*********+=:....................\n" +
+                RESET);
+        }
 
     public static void displayMainMenu() {
         final String CYAN = "\u001B[36m";
@@ -93,4 +101,5 @@ public class Menu {
         System.out.println("                                           3." + RED + "Quit\n" + RESET);
         System.out.println("                 ============================================================= ");
     }
+
 }

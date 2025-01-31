@@ -61,19 +61,18 @@ public class Search extends Product {
 
         } while (continueSearch);
     }
-
-    public static int binarySearch(ArrayList<Product> products, String research) {
-        int left = 0;
-        int right = products.size() - 1;
-        research = research.toLowerCase(); //product research
+// Function search Product
+    public static int binarySearch(ArrayList<Product> products, String target) {
+        int left = 0, right = products.size() - 1;
+        target = target.toLowerCase();
 
         while (left <= right) { // Start loop
             int mid = left + (right - left) / 2;
             String midName = products.get(mid).getName().toLowerCase(); //research in middle
 
-            if (midName.equals(research)) {
+            if (midName.equals(target)) {
                 return mid;
-            } else if (midName.compareTo(research) < 0) {
+            } else if (midName.compareTo(target) < 0) {
                 left = mid + 1; //midName before research
             } else {
                 right = mid - 1; // midName after research

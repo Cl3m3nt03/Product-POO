@@ -23,23 +23,21 @@ public class Client extends User implements Rules{
     }
 
     @Override
+    // showmenu for client
     public void showMenu() throws IOException, ParseException {
 
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
 
         while (!quit) {
-            // Display the main menu
             Menu.drawTitle();
             displayMainMenuClient();
-            // Get user's choice
             System.out.print("                 Enter your choice: ");
             if (scanner.hasNextLine()){
                 String choice = scanner.nextLine();
-                // Handle the user's choice
                 switch (choice) {
                     case "1":
-                        Search.searchProduct();
+                        Order order = new Order();
                         break;
                     case "2":
                         //call function
@@ -66,7 +64,7 @@ public class Client extends User implements Rules{
         scanner.close();
 
     }
-
+//visual for user
     private void displayMainMenuClient() {
         final String CYAN = "\u001B[36m";
         final String RESET = "\u001B[0m";

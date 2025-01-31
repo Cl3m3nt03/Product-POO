@@ -57,7 +57,7 @@ public class Product implements Comparable<Product> {
         this.description = description;
     }
 
-    // Convertir un produit en objet JSON
+    // Convert a product in obj JSON
     public JSONObject toJSON() {
         JSONObject productJSON = new JSONObject();
         productJSON.put("id", this.id);
