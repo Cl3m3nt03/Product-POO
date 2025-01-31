@@ -1,14 +1,15 @@
 ===== STATISTIQUES DES VENTES =====
 
 📌 Produit le plus vendu :
-Nom: Brosse à dents électrique
-ID: 10
-Prix: 39.99 €
-Stock restant: 3
-Description: Brosse à dents électrique avec plusieurs modes.
+Nom: Francois
+ID: 16
+Prix: 14.99 €
+Stock restant: 4
+Description: Le meilleur medoc
 
 📊 Quantités vendues par produit :
-  - Brosse à dents électrique: 497 units sold
+  - Francois: 496 units sold
+  - Brosse à dents électrique: 485 units sold
   - Tramadol: 475 units sold
   - Sérum anti-âge: 460 units sold
   - Azithromycine: 450 units sold
@@ -23,6 +24,5 @@ Description: Brosse à dents électrique avec plusieurs modes.
   - Ibuprofène: 300 units sold
   - Dentifrice blancheur: 250 units sold
   - Paracétamol: 200 units sold
-  - test: 50 units sold
 
 💰 Chiffre d'affaires total : 0.0 €

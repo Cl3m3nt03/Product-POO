@@ -22,4 +22,10 @@
   "quantity" : 10,
   "orderDate" : "2025-01-30",
   "isPriority" : false
+}, {
+  "product" : "Amoxicilline",
+  "orderNumber" : "d44c4b25-2319-48a9-9901-4b105635886d",
+  "quantity" : 2,
+  "orderDate" : "2025-01-31",
+  "isPriority" : true
 } ]

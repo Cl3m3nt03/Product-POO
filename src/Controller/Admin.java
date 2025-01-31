@@ -15,7 +15,7 @@ import view.PanelMenu;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Admin extends Client implements Rules {
+public class Admin extends User implements Rules {
 
     public Admin(String name, String password, String status) {
         super(name, password, status);

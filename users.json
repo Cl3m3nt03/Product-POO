@@ -14,4 +14,12 @@
   "name" : "employed",
   "password" : "123456",
   "status" : "employed"
+}, {
+  "name" : "test",
+  "password" : "123456",
+  "status" : "client"
+}, {
+  "name" : "test1",
+  "password" : "123456",
+  "status" : "employed"
 } ]

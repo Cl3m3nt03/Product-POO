@@ -7,7 +7,7 @@ import view.Menu;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Employed extends Client implements Rules {
+public class Employed extends User implements Rules {
 
         public Employed(String name, String password, String status) {
             super(name, password, status);
