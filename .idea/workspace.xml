@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="237145b9-e486-47e0-9366-86f3cd42474e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/command.json" beforeDir="false" afterPath="$PROJECT_DIR$/command.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Employed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Employed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics.txt" beforeDir="false" afterPath="$PROJECT_DIR$/statistics.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stocks_pharma.json" beforeDir="false" afterPath="$PROJECT_DIR$/stocks_pharma.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PanelMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PanelMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

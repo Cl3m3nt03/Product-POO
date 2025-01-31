@@ -10,13 +10,15 @@ import view.Menu;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
 public class Account {
 
     public List<Client> users = new ArrayList<>();
-// Create Account
+
+    // Create Account
     public void CreateAccount(String status) {
         boolean valid = false;
         Scanner scanner = new Scanner(System.in);
@@ -49,7 +51,8 @@ public class Account {
         }
         Menu.drawTitle();
     }
-//Connect Account
+
+    //Connect Account
     public void loginAccount() throws IOException, ParseException {
         recoveryUser();
         System.out.print("Login Account \n");
@@ -79,6 +82,7 @@ public class Account {
             }
         }
     }
+
     //Function save after create user
     void saveUser() {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -99,7 +103,8 @@ public class Account {
         File file = new File("users.json");
         if (file.exists()) {
             try {
-                users = objectMapper.readValue(file, new TypeReference<List<Client>>() {});
+                users = objectMapper.readValue(file, new TypeReference<List<Client>>() {
+                });
             } catch (IOException e) {
                 System.err.println("❌ Erreur lors de la lecture du fichier : " + e.getMessage());
             }
@@ -107,4 +112,59 @@ public class Account {
             System.out.println("❌ Le fichier d'utilisateurs n'existe pas. Aucun utilisateur chargé.");
         }
     }
+
+    public void DeleteAccount() {
+        boolean valid = false;
+        Scanner scanner = new Scanner(System.in);
+        recoveryUser(); // Charger la liste des utilisateurs depuis le fichier JSON
+
+        while (!valid) {
+            System.out.println("=== Delete Account ===");
+
+            System.out.print("Enter Your Name : ");
+            String name = scanner.nextLine().trim();
+
+            if (name.isEmpty()) {
+                System.out.println("Error : Name cannot be empty");
+                continue;
+            }
+
+            System.out.print("Enter Your Password : ");
+            String password = scanner.nextLine().trim();
+
+            if (password.length() < 6) {
+                System.out.println("Error : Password must be at least 6 characters long");
+                continue;
+            }
+
+            System.out.print("Enter Your Status : ");
+            String status = scanner.nextLine().trim();
+
+            if (status.isEmpty()) {
+                System.out.println("Error : Status cannot be empty");
+                continue;
+            }
+
+            Iterator<Client> iterator = users.iterator();
+            boolean found = false;
+
+            while (iterator.hasNext()) {
+                Client user = iterator.next();
+                if (user.getName().equals(name) && user.getPassword().equals(password) && user.getStatus().equals(status)) {
+                    iterator.remove();
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found) {
+                System.out.println("Account deleted !");
+                saveUser();
+                valid = true;
+            } else {
+                System.out.println("Error");
+            }
+        }
+    }
+
 }
